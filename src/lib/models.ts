@@ -2,11 +2,11 @@ export interface ResumeConfiguration {
   name: string;
   title: string;
   country: Country;
-  introduction: string;
-  education: ResumeSection<Education>;
-  experience: ResumeSection<Experience[]>;
-  skills: ResumeSection<WordCloudData>;
-  contact: ResumeSection<ContactInformation[]>
+  introduction: Introduction;
+  education?: ResumeSection<Education>;
+  experience?: ResumeSection<Experience[]>;
+  skills?: ResumeSection<WordCloudData>;
+  contact?: ResumeSection<ContactInformation[]>
 }
 
 interface ResumeSection<T> {
@@ -15,7 +15,12 @@ interface ResumeSection<T> {
   data: T
 }
 
-interface Country {
+interface Introduction {
+  short: string;
+  full?: string;
+}
+
+export interface Country {
   name: string;
   flag: string;
 }
@@ -34,7 +39,7 @@ interface Experience {
 type WordCloudData = Record<string, number>;
 
 interface ContactInformation {
-  type: "github" | "linkedin" | "x" | "email";
+  type: 'github' | 'linkedin' | 'x' | 'email';
   handle: string;
   link: string;
 }
