@@ -5,26 +5,47 @@ import { Education } from '../../lib/models';
 import SectionTitle from '../SectionTitle';
 
 interface ResumeSectionProps {
-  title: string;
+  education?: Education;
   introduction?: string;
 }
 
 export interface EducationResumeSectionProps extends ResumeSectionProps, Education {}
 
-function ResumeSectionDefault({title, introduction}: ResumeSectionProps) {
-  const renderIntroduction = () => introduction ? <p className="SectionIntroduction">{introduction}</p> : null;
+export function ResumeSection(props: ResumeSectionProps) {
+  const renderIntroduction = () => props.introduction ? 
+    <p className="SectionIntroduction">{props.introduction}</p> : 
+    null;
+
+  const getSectionTitle = (): string => {
+    if (props.education) {
+      return 'education';
+    }
+
+    return '';
+  }
+
+  const renderEducationSection = (): JSX.Element | null => {
+    if (props.education) {
+      return (
+        <EducationResumeSection {...props.education} />
+      )
+    }
+
+    return null;
+  }
+
   return (
-    <>
-      <SectionTitle title={title} />
+    <section className="ResumeSection">
+      <SectionTitle title={getSectionTitle()} />
       {renderIntroduction()}
-    </>
+      {renderEducationSection()}
+    </section>
   )
 }
 
-export function EducationResumeSection({title, introduction, ...education}: EducationResumeSectionProps) {
+function EducationResumeSection(education: Education) {
   return (
-    <section className="ResumeSection EducationSection">
-      <ResumeSectionDefault title={title} introduction={introduction} />
+    <section className="EducationSection">
       <aside className="School-location">
         <h5 className="School">{education.school}</h5>
         <h5 className="Location">{education.location}</h5>

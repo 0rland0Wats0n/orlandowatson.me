@@ -4,24 +4,10 @@ import React from 'react';
 
 import config from './lib/resume.data';
 import NameTitle from './components/NameTitle';
-import { EducationResumeSection } from './components/ResumeSection';
+import { ResumeSection } from './components/ResumeSection';
 
 function App() {
   const { name, title, country, introduction, education } = config;
-
-  const renderEducationSection = () => {
-    if (!education) {
-      return null;
-    }
-
-    return (
-      <EducationResumeSection 
-        title={education.title}
-        introduction={education.introduction}
-        {...education.data}
-      />
-    )
-  }
 
   return (
     <div className="App">
@@ -29,7 +15,10 @@ function App() {
       <section className="Introduction">
         <p>{introduction.full || introduction.short}</p>
       </section>
-      {renderEducationSection()}
+      <ResumeSection
+        introduction={education?.introduction} 
+        education={education?.data} 
+      />
     </div>
   );
 }
