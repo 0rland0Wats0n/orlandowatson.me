@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   margin: 0;
   font-weight: 1000;
 }
@@ -26,4 +26,13 @@ h3 {
 h4 {
   font-size: 28px;
   font-weight: 700;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 22px;
+  margin: 0;
 }

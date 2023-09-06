@@ -16,6 +16,14 @@ const config: ResumeConfiguration = {
     ' i love the challenge of working with, and discovering new technologies. ' + 
     'i look forward to a professional opportunity to flex both my current skills and' +
     ' adaptability to new environments.'
+  },
+  education: {
+    title: 'education',
+    data: {
+      school: 'claflin university',
+      location: 'orangeburg, sc',
+      degree: 'bsc computer science'
+    }
   }
 }
 

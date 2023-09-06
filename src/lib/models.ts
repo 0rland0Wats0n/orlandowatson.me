@@ -25,8 +25,9 @@ export interface Country {
   flag: string;
 }
 
-interface Education {
+export interface Education {
   school: string;
+  location: string;
   degree: string;
 }
 
