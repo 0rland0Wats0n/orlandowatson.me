@@ -1,5 +1,7 @@
-import { ResumeConfiguration } from "./models";
-import JamaicanFlag from "../media/jamaica.png";
+import { ResumeConfiguration } from './models';
+import JamaicanFlag from '../media/jamaica.png';
+import MicrosoftLogo from '../media/microsoft.png';
+import Logo from '../media/logo.png';
 
 const config: ResumeConfiguration = {
   name: 'orlando',
@@ -18,12 +20,35 @@ const config: ResumeConfiguration = {
     ' adaptability to new environments.'
   },
   education: {
-    title: 'education',
     data: {
       school: 'claflin university',
       location: 'orangeburg, sc',
       degree: 'bsc computer science'
     }
+  },
+  experience: {
+    data: [
+      {
+        company: 'orlandowatson.me',
+        logo: Logo,
+        skills: [
+          'react web app',
+          'ui/ux design',
+        ]
+      },
+      {
+        company: 'microsoft',
+        logo: MicrosoftLogo,
+        skills: [
+          'azure sdks',
+          'CaaS tools',
+          'rest apis',
+          'dev ex tools',
+          'testing tools',
+          'web apps'
+        ]
+      }
+    ]
   }
 }
 

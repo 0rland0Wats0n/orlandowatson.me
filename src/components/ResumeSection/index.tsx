@@ -1,11 +1,12 @@
 import './ResumeSection.css';
 
 import React from 'react';
-import { Education } from '../../lib/models';
+import { Education, Experience } from '../../lib/models';
 import SectionTitle from '../SectionTitle';
 
 interface ResumeSectionProps {
   education?: Education;
+  experience?: Experience[];
   introduction?: string;
 }
 
@@ -21,6 +22,10 @@ export function ResumeSection(props: ResumeSectionProps) {
       return 'education';
     }
 
+    if (props.experience) {
+      return 'experience';
+    }
+
     return '';
   }
 
@@ -28,6 +33,12 @@ export function ResumeSection(props: ResumeSectionProps) {
     if (props.education) {
       return (
         <EducationResumeSection {...props.education} />
+      )
+    }
+
+    if (props.experience) {
+      return (
+        <ExperienceResumeSection experiences={props.experience} />
       )
     }
 
@@ -53,4 +64,34 @@ function EducationResumeSection(education: Education) {
       <p className="Degree">{education.degree}</p>
     </section>
   )
+}
+
+interface ExperienceResumeSectionProps {
+  experiences: Experience[];
+}
+
+function ExperienceResumeSection({experiences}: ExperienceResumeSectionProps) {
+  return (
+    <>
+      {
+        experiences.map(experience => {
+          return (
+            <section className="Experience" key={experience.company}>
+              <aside className="Company">
+                <img src={experience.logo} alt={`${experience.company} logo`} className="Company-logo" />
+                <h5 className="Company-name">{experience.company}</h5>
+              </aside>
+              <aside className="Skills-used">
+                {
+                  experience.skills.map(skill => {
+                    return <p className="Skill-used" key={skill}>{skill}</p>
+                  })
+                }
+              </aside>
+            </section>
+          )
+        })
+      }
+    </>
+  );
 }

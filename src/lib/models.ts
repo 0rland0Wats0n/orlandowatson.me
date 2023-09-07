@@ -10,7 +10,6 @@ export interface ResumeConfiguration {
 }
 
 interface ResumeSection<T> {
-  title: string;
   introduction?: string;
   data: T
 }
@@ -31,7 +30,7 @@ export interface Education {
   degree: string;
 }
 
-interface Experience {
+export interface Experience {
   company: string;
   logo: string;
   skills: string[];

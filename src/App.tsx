@@ -7,7 +7,14 @@ import NameTitle from './components/NameTitle';
 import { ResumeSection } from './components/ResumeSection';
 
 function App() {
-  const { name, title, country, introduction, education } = config;
+  const { 
+    name, 
+    title, 
+    country, 
+    introduction, 
+    education,
+    experience 
+  } = config;
 
   return (
     <div className="App">
@@ -19,6 +26,7 @@ function App() {
         introduction={education?.introduction} 
         education={education?.data} 
       />
+      <ResumeSection experience={experience?.data} />
     </div>
   );
 }
