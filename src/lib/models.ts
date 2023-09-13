@@ -5,7 +5,7 @@ export interface ResumeConfiguration {
   introduction: Introduction;
   education?: ResumeSection<Education>;
   experience?: ResumeSection<Experience[]>;
-  skills?: ResumeSection<WordCloudData>;
+  skills?: ResumeSection<Skill[]>;
   contact?: ResumeSection<ContactInformation[]>
 }
 
@@ -36,9 +36,13 @@ export interface Experience {
   skills: string[];
 }
 
-type WordCloudData = Record<string, number>;
+export interface Skill {
+  name: string;
+  score: number;
+  details: string;
+}
 
-interface ContactInformation {
+export interface ContactInformation {
   type: 'github' | 'linkedin' | 'x' | 'email';
   handle: string;
   link: string;

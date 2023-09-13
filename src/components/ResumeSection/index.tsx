@@ -1,23 +1,37 @@
 import './ResumeSection.css';
 
 import React from 'react';
-import { Education, Experience } from '../../lib/models';
+import { Education, Experience, Skill } from '../../lib/models';
 import SectionTitle from '../SectionTitle';
+import { ExpandableSkillBox } from '../ExpandableSkillBox';
 
 interface ResumeSectionProps {
   education?: Education;
   experience?: Experience[];
+  skills?: Skill[];
   introduction?: string;
 }
 
-export interface EducationResumeSectionProps extends ResumeSectionProps, Education {}
+interface EducationResumeSectionProps {
+  education?: Education;
+}
+
+interface ExperienceResumeSectionProps {
+  experiences?: Experience[];
+}
+
+interface TechStackResumeSectionProps {
+  skills?: Skill[];
+}
+
+type SectionTitles = 'unknown' | 'education' | 'experience' | 'tech stack';
 
 export function ResumeSection(props: ResumeSectionProps) {
   const renderIntroduction = () => props.introduction ? 
     <p className="SectionIntroduction">{props.introduction}</p> : 
     null;
 
-  const getSectionTitle = (): string => {
+  const getSectionTitle = (): SectionTitles  => {
     if (props.education) {
       return 'education';
     }
@@ -26,35 +40,49 @@ export function ResumeSection(props: ResumeSectionProps) {
       return 'experience';
     }
 
-    return '';
+    if (props.skills) {
+      return 'tech stack';
+    }
+
+    return 'unknown';
   }
 
-  const renderEducationSection = (): JSX.Element | null => {
-    if (props.education) {
-      return (
-        <EducationResumeSection {...props.education} />
-      )
-    }
+  const renderSectionDetails = (): JSX.Element | null => {
+    switch (getSectionTitle()) {
+      case 'education':
+        return (
+          <EducationResumeSection education={props.education} />
+        );
 
-    if (props.experience) {
-      return (
-        <ExperienceResumeSection experiences={props.experience} />
-      )
-    }
+      case 'experience':
+        return (
+          <ExperienceResumeSection experiences={props.experience} />
+        );
 
-    return null;
+      case 'tech stack':
+        return (
+          <TechStackResumeSection skills={props.skills} />
+        );
+
+      default:
+        return null;
+    }
   }
 
   return (
     <section className="ResumeSection">
       <SectionTitle title={getSectionTitle()} />
       {renderIntroduction()}
-      {renderEducationSection()}
+      {renderSectionDetails()}
     </section>
   )
 }
 
-function EducationResumeSection(education: Education) {
+function EducationResumeSection({education}: EducationResumeSectionProps) {
+  if (!education) {
+    return null;
+  }
+
   return (
     <section className="EducationSection">
       <aside className="School-location">
@@ -66,11 +94,11 @@ function EducationResumeSection(education: Education) {
   )
 }
 
-interface ExperienceResumeSectionProps {
-  experiences: Experience[];
-}
-
 function ExperienceResumeSection({experiences}: ExperienceResumeSectionProps) {
+  if (!experiences) {
+    return null;
+  }
+
   return (
     <>
       {
@@ -94,4 +122,22 @@ function ExperienceResumeSection({experiences}: ExperienceResumeSectionProps) {
       }
     </>
   );
+}
+
+function TechStackResumeSection({skills}: TechStackResumeSectionProps) {
+  if (!skills) {
+    return null;
+  }
+
+  return (
+    <section className="TechStack">
+      {
+        skills.map(skill => {
+          return (
+            <ExpandableSkillBox key={skill.name} skill={skill} />
+          )
+        })
+      }
+    </section>
+  )
 }

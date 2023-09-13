@@ -13,7 +13,8 @@ function App() {
     country, 
     introduction, 
     education,
-    experience 
+    experience,
+    skills 
   } = config;
 
   return (
@@ -27,6 +28,10 @@ function App() {
         education={education?.data} 
       />
       <ResumeSection experience={experience?.data} />
+      <ResumeSection
+        introduction={skills?.introduction}
+        skills={skills?.data}
+      />
     </div>
   );
 }

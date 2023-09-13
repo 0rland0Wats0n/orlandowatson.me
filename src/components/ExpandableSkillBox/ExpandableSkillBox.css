@@ -1,0 +1,28 @@
+.ExpandableSkillBox {
+  color: white;
+  width: 100%;
+  margin: 0 5px 5px 0;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  position: relative;
+}
+
+.ExpandableSkillBox .ExpandableSkillBox-bg {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  z-index: -1;
+  border-radius: 5px 0 0 5px;
+}
+
+.ExpandableSkillBox[state-expanded="false"] .ExpandableSkillBox-skill-details {
+  height: 0;
+  overflow: hidden;
+}
+
+.ExpandableSkillBox[state-expanded="true"] .ExpandableSkillBox-bg {
+  width: 100% !important;
+}
