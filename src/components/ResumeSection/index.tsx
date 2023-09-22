@@ -1,14 +1,23 @@
 import './ResumeSection.css';
 
 import React from 'react';
-import { Education, Experience, Skill } from '../../lib/models';
+
+import { 
+  ContactInformation, 
+  Education, 
+  Experience, 
+  Skill 
+} from '../../lib/models';
 import SectionTitle from '../SectionTitle';
 import { ExpandableSkillBox } from '../ExpandableSkillBox';
+
+import { SocialLogos } from '../../lib/resume.data';
 
 interface ResumeSectionProps {
   education?: Education;
   experience?: Experience[];
   skills?: Skill[];
+  contact?: ContactInformation[];
   introduction?: string;
 }
 
@@ -24,7 +33,11 @@ interface TechStackResumeSectionProps {
   skills?: Skill[];
 }
 
-type SectionTitles = 'unknown' | 'education' | 'experience' | 'tech stack';
+interface ContactResumeSectionProps {
+  contacts?: ContactInformation[];
+}
+
+type SectionTitles = 'unknown' | 'education' | 'experience' | 'tech stack' | 'get in touch';
 
 export function ResumeSection(props: ResumeSectionProps) {
   const renderIntroduction = () => props.introduction ? 
@@ -42,6 +55,10 @@ export function ResumeSection(props: ResumeSectionProps) {
 
     if (props.skills) {
       return 'tech stack';
+    }
+
+    if (props.contact) {
+      return 'get in touch';
     }
 
     return 'unknown';
@@ -62,6 +79,11 @@ export function ResumeSection(props: ResumeSectionProps) {
       case 'tech stack':
         return (
           <TechStackResumeSection skills={props.skills} />
+        );
+
+      case 'get in touch':
+        return (
+          <ContactResumeSection contacts={props.contact} />
         );
 
       default:
@@ -135,6 +157,31 @@ function TechStackResumeSection({skills}: TechStackResumeSectionProps) {
         skills.map(skill => {
           return (
             <ExpandableSkillBox key={skill.name} skill={skill} />
+          )
+        })
+      }
+    </section>
+  )
+}
+
+function ContactResumeSection({contacts}: ContactResumeSectionProps) {
+  if (!contacts) {
+    return null;
+  }
+
+  return (
+    <section className="Contacts">
+      {
+        contacts.map(contact => {
+          return (
+            <a href={contact.link} className="Contact-link">
+              <img 
+                src={SocialLogos[contact.type]} 
+                alt={`${contact.type} logo`} 
+                className="Contact-link-logo" 
+              />
+              <p className="Contact-link-handle">{contact.handle}</p>
+            </a>
           )
         })
       }

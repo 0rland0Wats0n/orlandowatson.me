@@ -42,8 +42,10 @@ export interface Skill {
   details: string;
 }
 
+export type ContactKind = 'github' | 'linkedin' | 'x' | 'email';
+
 export interface ContactInformation {
-  type: 'github' | 'linkedin' | 'x' | 'email';
+  type: ContactKind;
   handle: string;
   link: string;
 }

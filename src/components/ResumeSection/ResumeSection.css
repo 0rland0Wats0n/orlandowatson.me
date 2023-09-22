@@ -65,3 +65,29 @@
   align-items: flex-start;
   align-content: flex-start;
 }
+
+.ResumeSection .Contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-bottom: 30px;  
+}
+
+.ResumeSection .Contacts .Contact-link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ResumeSection .Contacts .Contact-link img {
+  width: 36px;
+  max-width: 100%;
+}
+
+.ResumeSection .Contacts .Contact-link p {
+  margin-left: 10px;
+  line-height: 1;
+}

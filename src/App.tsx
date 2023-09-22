@@ -14,7 +14,8 @@ function App() {
     introduction, 
     education,
     experience,
-    skills 
+    skills, 
+    contact 
   } = config;
 
   return (
@@ -32,6 +33,7 @@ function App() {
         introduction={skills?.introduction}
         skills={skills?.data}
       />
+      <ResumeSection contact={contact?.data} />
     </div>
   );
 }

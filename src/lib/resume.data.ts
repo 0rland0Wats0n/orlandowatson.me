@@ -1,7 +1,12 @@
-import { ResumeConfiguration } from './models';
+import { ContactKind, ResumeConfiguration } from './models';
+
 import JamaicanFlag from '../media/jamaica.png';
 import MicrosoftLogo from '../media/microsoft.png';
 import Logo from '../media/logo.png';
+import EmailLogo from '../media/email.png';
+import TwitterXLogo from '../media/twitterx.png';
+import GithubLogo from '../media/github.png';
+import LinkedinLogo from '../media/linkedin.png';
 
 const config: ResumeConfiguration = {
   name: 'orlando',
@@ -100,7 +105,38 @@ const config: ResumeConfiguration = {
         details: 'i have a basic understanding of docker and some familiarity with its fundamental concepts and functionalities. i have developed and deployed web applications in docker containers and know the best resources to supplement gaps in my knowledge of docker.'
       }
     ]
+  },
+  contact: {
+    data: [
+      {
+        type: 'github',
+        handle: '/0rland0Wats0n',
+        link: 'https://github.com/0rland0Wats0n'
+      },
+      {
+        type: 'linkedin',
+        handle: '/watsonorlando',
+        link: 'https://www.linkedin.com/in/watsonorlando/'
+      },
+      {
+        type: 'x',
+        handle: '@0RLAND0WATS0N',
+        link: 'https://twitter.com/0RLAND0WATS0N'
+      },
+      {
+        type: 'email',
+        handle: 'orlandowatson.me@gmail.com',
+        link: 'mailto:orlandowatson.me@gmail.com?subject=Cool Website. Let\'s Connect!'
+      }
+    ]
   }
+}
+
+export const SocialLogos: Record<ContactKind, string> = {
+  email: EmailLogo,
+  x: TwitterXLogo,
+  github: GithubLogo,
+  linkedin: LinkedinLogo
 }
 
 export default config;
