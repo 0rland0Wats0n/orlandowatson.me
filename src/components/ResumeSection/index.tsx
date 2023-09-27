@@ -131,6 +131,7 @@ function ExperienceResumeSection({experiences}: ExperienceResumeSectionProps) {
                 <img src={experience.logo} alt={`${experience.company} logo`} className="Company-logo" />
                 <h5 className="Company-name">{experience.company}</h5>
               </aside>
+              <p className="Experience-details">{experience.details}</p>
               <aside className="Skills-used">
                 {
                   experience.skills.map(skill => {

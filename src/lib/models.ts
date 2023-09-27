@@ -32,6 +32,7 @@ export interface Education {
 
 export interface Experience {
   company: string;
+  details: string;
   logo: string;
   skills: string[];
 }

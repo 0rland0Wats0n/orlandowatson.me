@@ -11,6 +11,10 @@
   opacity: 0.6;
 }
 
+.ResumeSection .Experience .Experience-details {
+  margin: 10px 0 20px;
+}
+
 .ResumeSection .EducationSection .School-location {
   display: inline-flex;
   flex-wrap: wrap;
@@ -80,6 +84,7 @@
   flex-wrap: nowrap;
   align-items: center;
   margin-bottom: 20px;
+  color: #333;
 }
 
 .ResumeSection .Contacts .Contact-link img {

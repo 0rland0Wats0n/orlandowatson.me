@@ -35,6 +35,7 @@ const config: ResumeConfiguration = {
     data: [
       {
         company: 'orlandowatson.me',
+        details: 'orlandowatson.me is an interactive resume designed and developed solely by myself. the ui/ux designs were made using figma while the web app was created using react and deployed in a docker container.',
         logo: Logo,
         skills: [
           'react web app',
@@ -44,6 +45,7 @@ const config: ResumeConfiguration = {
       },
       {
         company: 'microsoft',
+        details: 'i worked across a range of projects and features at microsoft. these included search and @mentions for the onenote online web app; azure sdks to give developers access communication as a service features like sms and phone numbers; rest apis and azure sdks to provide live media composition capabilities to developers; and a host of other developer tools.',
         logo: MicrosoftLogo,
         skills: [
           'azure sdks',
