@@ -1,5 +1,3 @@
-import './SectionTitle.css';
-
 import React from 'react';
 
 export interface SectionTitleProps {

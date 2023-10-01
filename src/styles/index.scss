@@ -1,0 +1,18 @@
+@use "./partials/fonts";
+@use "./partials/colors";
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: fonts.$font-size-root;
+}
+
+body {
+  margin: 0;
+  font-family: fonts.$font-stack;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: colors.$color-black;
+}

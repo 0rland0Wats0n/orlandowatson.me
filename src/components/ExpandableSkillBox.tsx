@@ -1,7 +1,5 @@
-import "./ExpandableSkillBox.css";
-
 import React, { useState } from "react";
-import { Skill } from "../../lib/models";
+import { Skill } from "../lib/models";
 
 interface ExpandableSkillBoxProps {
   skill: Skill;

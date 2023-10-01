@@ -1,0 +1,27 @@
+.NameAndTitleWithFlag {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px 0;
+
+  .Name-flag {
+    display: flex;
+    flex-direction: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    .Flag {
+      width: 64px;
+      height: 40px;
+      object-fit: cover;
+    }
+
+    .Name {
+      margin-left: 10px;
+      line-height: 1;
+    }
+  }
+
+  .Title {
+    opacity: 0.6;
+  }
+}
