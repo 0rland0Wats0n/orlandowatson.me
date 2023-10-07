@@ -10,6 +10,7 @@ export enum ExpandableSkillBoxGlobalState {
   default = 'default',
   globalOpen = 'globalOpen',
   globalClosed = 'globalClosed',
+  wordCloud = 'wordCloud'
 }
 
 export function ExpandableSkillBox({
@@ -20,15 +21,13 @@ export function ExpandableSkillBox({
   const {name, score, details} = skill;
 
   useEffect(() => {
-    switch (globalState) {
-      case ExpandableSkillBoxGlobalState.globalClosed:
-        setExpanded(false);
-        break;
-  
+    switch (globalState) {  
       case ExpandableSkillBoxGlobalState.globalOpen:
         setExpanded(true);
         break;
-  
+      
+      case ExpandableSkillBoxGlobalState.globalClosed:
+      case ExpandableSkillBoxGlobalState.wordCloud:
       default:
         setExpanded(false);
         break;

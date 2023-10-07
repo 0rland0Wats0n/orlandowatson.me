@@ -13,7 +13,7 @@ export default function ContactSection({contacts}: {contacts: ContactInformation
       {
         contacts.map(contact => {
           return (
-            <a href={contact.link} className="Contact-link">
+            <a href={contact.link} className="Contact-link" key={contact.type}>
               <img 
                 src={SocialLogos[contact.type]} 
                 alt={`${contact.type} logo`} 

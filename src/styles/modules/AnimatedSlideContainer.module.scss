@@ -1,0 +1,21 @@
+.AnimatedSlideContainer {
+  position: relative;
+
+  .Animated-bg {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    bottom: 45px;
+    right: 45px;
+    border-radius: 100%;
+    transform: scale(5500%);
+  }
+
+  .Logo {
+    width: 64px;
+    max-width: 100%;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+  }
+}

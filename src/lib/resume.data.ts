@@ -98,12 +98,12 @@ const config: ResumeConfiguration = {
       },
       {
         name: 'php',
-        score: 0.65,
+        score: 0.6,
         details: 'i have a basic understanding of the php language through my work on wordpress websites. i can read and write php code if required and know the best resources to supplement gaps in my knowledge of the language.'
       },
       {
         name: 'docker',
-        score: 0.6,
+        score: 0.5,
         details: 'i have a basic understanding of docker and some familiarity with its fundamental concepts and functionalities. i have developed and deployed web applications in docker containers and know the best resources to supplement gaps in my knowledge of docker.'
       }
     ]

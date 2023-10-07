@@ -50,3 +50,11 @@ export interface ContactInformation {
   handle: string;
   link: string;
 }
+
+export enum ProficiencyLevel {
+  fundamental = 'fundamental awareness',
+  novice = 'novice',
+  intermediate = 'intermediate',
+  advanced = 'advanced',
+  expert = 'expert'
+}
