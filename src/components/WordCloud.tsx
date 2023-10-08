@@ -39,7 +39,7 @@ export default function WordCloud({
     range: fontRange,
   });
   const fontSizeSetter = (word: Word) => fontScale(word.value);
-  const fixedValueGenerator = () => 0.5;
+  const fixedValueGenerator = () => 0;
 
   return (
     <Wordcloud

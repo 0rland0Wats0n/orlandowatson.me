@@ -49,7 +49,7 @@ export default function TechStackSection({skills}: {skills: Skill[]}) {
     switch (globalExpandableSkillBoxState) {
       case ExpandableSkillBoxGlobalState.wordCloud:
         return (
-          <WordCloud skills={skills} width={500} height={400}/>
+          <WordCloud skills={skills} width={500} height={220}/>
         );
 
       case ExpandableSkillBoxGlobalState.default:

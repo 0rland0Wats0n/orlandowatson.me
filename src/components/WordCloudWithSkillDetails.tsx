@@ -130,7 +130,7 @@ export default function WordCloudWithSkillDetails({
     colors: ['#000', '#5e5e5e', '#bababa', '#a6a6a6', '#dfdfdf'],
     font: 'Mulish',
     fontWeight: '1000',
-    fontRange: [21, 50],
+    fontRange: [21, 64],
     onWordClick,
     onWordMouseOver,
     onWordMouseOut
