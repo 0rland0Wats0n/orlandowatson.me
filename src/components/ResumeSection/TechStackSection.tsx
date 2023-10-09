@@ -4,28 +4,23 @@ import { Skill } from "../../lib/models";
 import { ExpandableSkillBox, ExpandableSkillBoxGlobalState } from "../ExpandableSkillBox";
 import WordCloud from '../WordCloudWithSkillDetails';
 
-export default function TechStackSection({skills}: {skills: Skill[]}) {
+interface TechStackSectionProps {
+  skills: Skill[];
+  windowWidth: number;
+}
+
+export default function TechStackSection({skills, windowWidth}: TechStackSectionProps) {
   const [globalExpandableSkillBoxState, setGlobalExpandableSkillBoxState] = useState(ExpandableSkillBoxGlobalState.default);
 
   useEffect(() => {
-    const switchGlobalExpandableSkillBoxState = () => {
-      if (window.innerWidth >= 900) {
-        setGlobalExpandableSkillBoxState(ExpandableSkillBoxGlobalState.wordCloud);
-      } else if (window.innerWidth >= 600) {
-        setGlobalExpandableSkillBoxState(ExpandableSkillBoxGlobalState.globalOpen);
-      } else {
-        setGlobalExpandableSkillBoxState(ExpandableSkillBoxGlobalState.default);
-      }
+    if (windowWidth >= 900) {
+      setGlobalExpandableSkillBoxState(ExpandableSkillBoxGlobalState.wordCloud);
+    } else if (windowWidth >= 600) {
+      setGlobalExpandableSkillBoxState(ExpandableSkillBoxGlobalState.globalOpen);
+    } else {
+      setGlobalExpandableSkillBoxState(ExpandableSkillBoxGlobalState.default);
     }
-
-    window.addEventListener('resize', switchGlobalExpandableSkillBoxState);
-    window.addEventListener('load', switchGlobalExpandableSkillBoxState);
-
-    return () => {
-      window.removeEventListener('resize', switchGlobalExpandableSkillBoxState);
-      window.removeEventListener('load', switchGlobalExpandableSkillBoxState);  
-    }
-  }, []);
+  }, [windowWidth]);
 
   const _renderExpandableSkillBoxes = () => {
     return (

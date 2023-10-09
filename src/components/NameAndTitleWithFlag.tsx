@@ -3,7 +3,7 @@ import { Country } from '../lib/models';
 
 export interface NameAndTitleWithFlagProps {
   name: string;
-  title: string;
+  title?: string;
   country?: Country;
 }
 
@@ -16,7 +16,9 @@ function NameAndTitleWithFlag({name, title, country}: NameAndTitleWithFlagProps)
         {renderFlag()}
         <h1 className="Name">{name}</h1>
       </aside>
-      <h3 className="Title">{title}</h3>
+      {
+        title ? <h3 className="Title">{title}</h3> : null 
+      }
     </section>
   )
 }

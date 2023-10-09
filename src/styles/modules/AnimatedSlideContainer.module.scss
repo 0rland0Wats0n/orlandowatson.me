@@ -1,5 +1,8 @@
 .AnimatedSlideContainer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .Animated-bg {
     position: absolute;
@@ -9,6 +12,7 @@
     right: 45px;
     border-radius: 100%;
     transform: scale(5500%);
+    z-index: -1;
   }
 
   .Logo {
@@ -17,5 +21,18 @@
     position: absolute;
     bottom: 30px;
     right: 30px;
+  }
+
+  .Animated-children {
+    .Animated-child {
+      overflow: hidden;
+      color: white;
+      text-align: right;
+      padding: 0 40px;
+
+      &[data-is-active=false] {
+        height: 0;
+      }
+    }
   }
 }
