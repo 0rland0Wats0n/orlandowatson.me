@@ -58,3 +58,16 @@ export enum ProficiencyLevel {
   advanced = 'advanced',
   expert = 'expert'
 }
+
+export type TransitionDirection = 'forward' | 'backward';
+
+export interface Transition {
+  isTransitioning: boolean;
+  direction: TransitionDirection;
+  timeInMs: number;
+}
+
+export interface Active {
+  left: number;
+  right: number;
+}

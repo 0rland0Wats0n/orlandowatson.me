@@ -6,33 +6,21 @@
 
   .Animated-bg {
     position: absolute;
-    width: 32px;
-    height: 32px;
-    bottom: 45px;
-    right: 45px;
-    border-radius: 100%;
-    transform: scale(5500%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     z-index: -1;
   }
 
-  .Logo {
-    width: 64px;
-    max-width: 100%;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
+  .Animated-children {
+    overflow: hidden;
+    color: white;
+    text-align: right;
+    padding: 0 40px;
   }
 
-  .Animated-children {
-    .Animated-child {
-      overflow: hidden;
-      color: white;
-      text-align: right;
-      padding: 0 40px;
-
-      &[data-is-active=false] {
-        height: 0;
-      }
-    }
+  &[data-is-at-start=false] {
+    
   }
 }
