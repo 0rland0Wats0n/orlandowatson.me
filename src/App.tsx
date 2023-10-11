@@ -12,7 +12,8 @@ import TechStackSection from './components/ResumeSection/TechStackSection';
 import ContactsSection from './components/ResumeSection/ContactsSection';
 import AnimatedSlideContainer from './components/AnimatedSlideContainer';
 import { ResumeConfiguration, Transition, Active, TransitionDirection } from './lib/models';
-import { throttle } from './lib/functions';
+import { log, throttle } from './lib/functions';
+import AnimatedScrollIcon from './components/AnimatedScrollIcon';
 
 const { 
   name, 
@@ -69,6 +70,11 @@ function App() {
   const setLeftStack = (stack: React.ReactNode[]) => {
     leftStackRef.current = stack;
     _setLeftStack(stack);
+  }
+
+  const handleNextClick = () => {
+    // setTransitioning(true)
+    log('next clicked')
   }
 
   const leftSideChildren: Record<keyof ResumeConfiguration, (key?: string) => React.ReactNode> = useMemo(() => {
@@ -301,7 +307,12 @@ function App() {
     }
 
     if (activeLeft === -1) {
-      return <NameAndTitleWithFlag name={`i am ${name}`} />;
+      return (
+        <>
+          <NameAndTitleWithFlag name={`i am ${name}`} />
+          <AnimatedScrollIcon delay={5000} onClick={handleNextClick}/>
+        </>
+      )
     }
 
     return (
