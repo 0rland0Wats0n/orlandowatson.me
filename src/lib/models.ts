@@ -6,7 +6,7 @@ export interface ResumeConfiguration {
   education: ResumeSection<Education>;
   experience: ResumeSection<Experience[]>;
   skills: ResumeSection<Skill[]>;
-  contact: ResumeSection<ContactInformation[]>
+  contacts: ResumeSection<ContactInformation[]>
 }
 
 interface ResumeSection<T> {
@@ -16,7 +16,7 @@ interface ResumeSection<T> {
 
 interface Introduction {
   short: string;
-  full?: string;
+  full: string;
 }
 
 export interface Country {
@@ -26,7 +26,7 @@ export interface Country {
 
 export interface Education {
   school: string;
-  location: string;
+  type: string;
   degree: string;
 }
 
@@ -59,7 +59,7 @@ export enum ProficiencyLevel {
   expert = 'expert'
 }
 
-export type TransitionDirection = 'forward' | 'backward';
+export type TransitionDirection = 'forward' | 'backward' | 'none';
 
 export interface Transition {
   isTransitioning: boolean;
@@ -70,4 +70,20 @@ export interface Transition {
 export interface Active {
   left: number;
   right: number;
+}
+
+export type Visibility = 'visible' | 'hidden';
+
+export type AppMode = 'default' | 'wheel';
+
+export type ActiveSection = 'landing' | keyof ResumeConfiguration; 
+
+export interface IconTypes {
+  default: string;
+  white: string;
+}
+
+export interface ContainerProps {
+  resumeData: ResumeConfiguration;
+  windowWidth: number;
 }

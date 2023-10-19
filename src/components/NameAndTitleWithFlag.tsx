@@ -1,24 +1,51 @@
 import React from 'react';
+
 import { Country } from '../lib/models';
+import AnimatedElement from './AnimatedElement';
 
 export interface NameAndTitleWithFlagProps {
   name: string;
-  title?: string;
-  country?: Country;
+  title: string;
+  country: Country;
+  state: NameAndTitleWithFlagState;
 }
 
-function NameAndTitleWithFlag({name, title, country}: NameAndTitleWithFlagProps) {
-  const renderFlag = () => country ? <img className="Flag" src={country.flag} alt={country.name} /> : null;
+export type NameAndTitleWithFlagState = 'landing' | 'name' | 'name+title' | 'name+title+flag';
 
+const NameAndTitleWithFlag = ({
+  name, 
+  title, 
+  country, 
+  state
+}: NameAndTitleWithFlagProps) => {
   return (
     <section className="NameAndTitleWithFlag">
       <aside className="Name-flag">
-        {renderFlag()}
-        <h1 className="Name">{name}</h1>
+        <AnimatedElement
+          timeout={1250}
+          visibility={state.includes('flag') ? 'visible' : 'hidden'}
+          enterActive='animate__fadeIn'
+          exitActive='animate__fadeOut'
+        >
+          <img className="Flag" src={country.flag} alt={country.name} />
+        </AnimatedElement>
+        <AnimatedElement
+          timeout={1250}
+          visibility={state.includes('name') ? 'visible' : 'hidden'}
+          enterActive='animate__fadeInUp'
+          exitActive='animate__fadeOutDown'
+        >
+          <h1 className="Name">{name}</h1>
+        </AnimatedElement>
       </aside>
-      {
-        title ? <h3 className="Title">{title}</h3> : null 
-      }
+      <AnimatedElement
+        timeout={1250}
+        visibility={state.includes('title') ? 'visible' : 'hidden'}
+        enterActive='animate__fadeInUp'
+        exitActive='animate__fadeOutDown'
+      >
+        <h3 className="Title">{title}</h3>
+      </AnimatedElement>
     </section>
   )
 }

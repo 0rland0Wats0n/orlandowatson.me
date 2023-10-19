@@ -1,0 +1,18 @@
+@use "../partials/colors";
+
+.RightSide {
+  width: 0;
+  overflow: hidden;
+  color: colors.$color-off-white;
+  background-color: colors.$color-black;
+  transition: width 700ms linear;
+
+    @media (min-width: 900px) {
+      width: 40%;
+      height: 100%;
+
+      &[data-active-section=landing] {
+        width: 0;
+      }
+    }
+}

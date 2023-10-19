@@ -1,0 +1,14 @@
+@use "../partials/colors";
+
+.Education {
+  width: 100%;
+  min-height: 100vh;
+  background-color: colors.$color-gray;
+  color: colors.$color-off-white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  padding: 30px;
+}

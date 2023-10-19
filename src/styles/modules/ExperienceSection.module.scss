@@ -1,0 +1,76 @@
+@use "../partials/colors";
+
+.Experience {
+  width: 100%;
+  min-height: 100vh;
+  color: colors.$color-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 30px;
+  
+  .Experience-title {
+    width: 100%;
+    text-align: right;
+    height: auto;
+    padding-bottom: 30px;
+  }
+
+  .Experience-items {
+
+    .Experience-item {
+      margin-bottom: 30px;
+      padding-left: 15px;
+      border-left: 6px solid colors.$color-blue;
+  
+      .Company {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+  
+        .Company-logo {
+          width: 25px;
+          max-width: 100%;
+          margin-right: 10px;
+        }
+      }
+  
+      .Details {
+        margin: 10px 0 20px;
+      }
+  
+      .Skills-used {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
+  
+        .Skill-used {
+          flex-basis: content;
+          margin: 0 5px 5px 0;
+          padding: 5px;
+          border: 1px solid colors.$color-black;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .Experience-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 30px;
+
+      .Experience-item {
+        width: auto;
+      }
+    }
+  }
+}

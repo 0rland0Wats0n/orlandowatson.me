@@ -10,24 +10,19 @@
   flex-direction: row;
   justify-content: center;
   cursor: pointer;
+  transition: opacity 700ms linear;
 
   .ScrollWheel {
     width: 6px;
     height: 8px;
     border-radius: 8px;
-    background-color: colors.$color-black;
+    background-color: colors.$color-blue;
     margin-top: 4px;
-    animation: scrollWheelBounce 2000ms linear 200ms infinite;
     opacity: 0.8;
-  }
-
-  &[data-visible=false] {
-    opacity: 0;
-  }
-
-  &[data-visible=true] {
-    opacity: 1;
-    transition: opacity 700ms linear;
+    
+    &[data-should-animate=true] {
+      animation: scrollWheelBounce 2000ms linear 200ms infinite;
+    }
   }
 }
 

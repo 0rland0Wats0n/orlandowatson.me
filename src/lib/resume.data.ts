@@ -1,12 +1,16 @@
-import { ContactKind, ResumeConfiguration } from './models';
+import { ContactKind, IconTypes, ResumeConfiguration } from './models';
 
 import JamaicanFlag from '../media/jamaica.png';
 import MicrosoftLogo from '../media/microsoft.png';
 import Logo from '../media/logo.png';
 import EmailLogo from '../media/email.png';
+import EmailLogoWhite from '../media/email-white.png';
 import TwitterXLogo from '../media/twitterx.png';
+import TwitterXLogoWhite from '../media/twitterx-white.png';
 import GithubLogo from '../media/github.png';
+import GithubLogoWhite from '../media/github-white.png';
 import LinkedinLogo from '../media/linkedin.png';
+import LinkedinLogoWhite from '../media/linkedin-white.png';
 
 const config: ResumeConfiguration = {
   name: 'orlando',
@@ -27,8 +31,8 @@ const config: ResumeConfiguration = {
   education: {
     data: {
       school: 'claflin university',
-      location: 'orangeburg, sc',
-      degree: 'bsc computer science'
+      type: 'bachelor of science',
+      degree: 'computer science'
     }
   },
   experience: {
@@ -38,8 +42,10 @@ const config: ResumeConfiguration = {
         details: 'orlandowatson.me is an interactive resume designed and developed solely by myself. the ui/ux designs were made using figma while the web app was created using react and deployed in a docker container.',
         logo: Logo,
         skills: [
-          'react web app',
-          'ui/ux design',
+          'react.js',
+          'javascript/typescript',
+          'sass',
+          'figma',
           'docker'
         ]
       },
@@ -48,6 +54,8 @@ const config: ResumeConfiguration = {
         details: 'i worked across a range of projects and features at microsoft. these included search and @mentions for the onenote online web app; azure sdks to give developers access communication as a service features like sms and phone numbers; rest apis and azure sdks to provide live media composition capabilities to developers; and a host of other developer tools.',
         logo: MicrosoftLogo,
         skills: [
+          'javascript/typescript',
+          'ç#/.net',
           'azure sdks',
           'CaaS tools',
           'rest apis',
@@ -108,7 +116,7 @@ const config: ResumeConfiguration = {
       }
     ]
   },
-  contact: {
+  contacts: {
     data: [
       {
         type: 'github',
@@ -134,11 +142,23 @@ const config: ResumeConfiguration = {
   }
 }
 
-export const SocialLogos: Record<ContactKind, string> = {
-  email: EmailLogo,
-  x: TwitterXLogo,
-  github: GithubLogo,
-  linkedin: LinkedinLogo
+export const SocialIcons: Record<ContactKind, IconTypes> = {
+  email: {
+    default: EmailLogo,
+    white: EmailLogoWhite
+  },
+  x: {
+    default: TwitterXLogo,
+    white: TwitterXLogoWhite
+  },
+  github: {
+    default: GithubLogo,
+    white: GithubLogoWhite
+  },
+  linkedin: {
+    default: LinkedinLogo,
+    white: LinkedinLogoWhite
+  }
 }
 
 export default config;

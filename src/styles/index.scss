@@ -10,9 +10,46 @@
 }
 
 body {
+  background-color: colors.$color-off-white;
   margin: 0;
   font-family: fonts.$font-stack;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: colors.$color-black;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+.color-orange {
+  color: colors.$color-orange;
+}
+
+.color-blue {
+  color: colors.$color-blue;
+}
+
+.v-hidden {
+  visibility: hidden;
+}
+
+.v-visible {
+  visibility: visible;
 }

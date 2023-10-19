@@ -1,7 +1,9 @@
+@use "../partials/colors";
+
 .NameAndTitleWithFlag {
   display: flex;
   flex-direction: column;
-  padding: 40px 30px 0;
+  padding: 40px 30px;
 
   .Name-flag {
     display: flex;
@@ -9,19 +11,19 @@
     align-items: center;
     justify-content: flex-start;
 
-    .Flag {
+    img {
       width: 64px;
       height: 40px;
+      margin-right: 10px;
       object-fit: cover;
     }
 
-    .Name {
-      margin-left: 10px;
+    h1 {
       line-height: 1;
     }
   }
 
-  .Title {
-    opacity: 0.6;
+  h3 {
+    color: colors.$color-gray;
   }
 }

@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
 interface AnimatedScrollIconProps {
-  delay: number;
+  visible?: boolean;
   onClick?: () => void;
 }
 
-const AnimatedScrollIcon =  ({delay = 5000, onClick}: AnimatedScrollIconProps) => {
-  const [visible, setVisible] = useState(delay <= 0);
+const AnimatedScrollIcon =  ({visible, onClick}: AnimatedScrollIconProps) => {
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (!visible) {
-        setTimeout(() => setVisible(true), delay);
+    const handleScroll = () => {
+      const height = window.innerHeight;
+      const y = window.scrollY;
+      if (y <= height*0.75) {
+        setScrollY(y);
       }
-    })
-  }, [delay, visible])
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  })
 
   return (
     <div 
@@ -22,7 +29,11 @@ const AnimatedScrollIcon =  ({delay = 5000, onClick}: AnimatedScrollIconProps) =
       onClick={onClick}
       data-visible={visible}
     >
-      <div className="ScrollWheel" />
+      <div 
+        className="ScrollWheel" 
+        style={{ height: `${scrollY + 8}px` }}
+        data-should-animate={scrollY === 0}
+      />
     </div>
   )
 }

@@ -1,11 +1,19 @@
-// COMPONENT IMPORTS
+@import "animate.css";
 
+// CONTAINER IMPORTS
+@import "./modules/LeftSide.module.scss";
+@import "./modules/RightSide.module.scss";
+
+// COMPONENT IMPORTS
 @import "./modules/ExpandableSkillBox.module.scss";
 @import "./modules/NameAndTitleWithFlag.module.scss";
 @import "./modules/SectionTitle.module.scss";
-@import "./modules/ResumeSection.module.scss";
+@import "./modules/EducationSection.module.scss";
+@import "./modules/ExperienceSection.module.scss";
+@import "./modules/ContactsSection.module.scss";
+@import "./modules/TitleAndCountrySection.module.scss";
+@import "./modules/IntroductionSection.module.scss";
 @import "./modules/AnimatedSlideContainer.module.scss";
-@import "./modules/WordCloud.module.scss";
 @import "./modules/AnimatedScrollIcon.module.scss";
 
 .App {
@@ -20,10 +28,6 @@
     flex-direction: column;
     transition: width 700ms linear;
 
-    .Introduction {
-      padding: 30px 30px 0;
-    }
-
     .AnimatedScrollIcon {
       margin-top: 30px;
     }
@@ -31,8 +35,7 @@
     @media (min-width: 900px) {
       width: 60%;
       height: 100%;
-      overflow-y: auto;
-      justify-content: flex-end;
+      overflow-y: scroll;
 
       &[data-is-at-start=true] {
         width: 100%;
@@ -40,6 +43,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+      }
+
+      &[data-is-at-start=false] {
+        padding-bottom: 40px;
+
+        & > :first-child {
+          margin-top: auto;
+        }
       }
     }
   }
@@ -60,10 +71,5 @@
         overflow: visible;
       }
     }
-  }
-
-  @media (min-width: 900px) {
-    height: 100vh;
-    overflow: hidden;
   }
 }
