@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect, useState } from 'react';
+import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import { Visibility } from '../lib/models';
@@ -21,6 +21,7 @@ const AnimatedElement = ({
 }: AnimatedElementProps) => {
   const [visible, setVisible] = useState(false);
   const [nameClasses, setNameClasses] = useState('v-hidden');
+  const nodeRef = useRef(null);
 
   const transitionClassNames = {
     enterActive, 
@@ -44,6 +45,7 @@ const AnimatedElement = ({
       onEnter={show}
       onExited={hide}
       className={`animate__animated ${nameClasses} ${className}`}
+      ref={nodeRef}
     >
       {children}
     </CSSTransition>
