@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 interface AnimatedScrollIconProps {
   visible?: boolean;
@@ -6,22 +6,22 @@ interface AnimatedScrollIconProps {
 }
 
 const AnimatedScrollIcon =  ({visible, onClick}: AnimatedScrollIconProps) => {
-  const [scrollY, setScrollY] = useState(0);
+  // const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const height = window.innerHeight;
-      const y = window.scrollY;
-      if (y <= height*0.75) {
-        setScrollY(y);
-      }
-    }
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const height = window.innerHeight;
+  //     const y = window.scrollY;
+  //     if (y <= height*0.5) {
+  //       setScrollY(y);
+  //     }
+  //   }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    }
-  })
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   }
+  // })
 
   return (
     <div 
@@ -31,8 +31,8 @@ const AnimatedScrollIcon =  ({visible, onClick}: AnimatedScrollIconProps) => {
     >
       <div 
         className="ScrollWheel" 
-        style={{ height: `${scrollY + 8}px` }}
-        data-should-animate={scrollY === 0}
+        style={{ height: `8px` }}
+        data-should-animate={true}
       />
     </div>
   )

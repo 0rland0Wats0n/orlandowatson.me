@@ -15,11 +15,29 @@ $font-size-root: 62.5%;
   }
 }
 
+.font--large {
+  font-size: 3.2rem;
+}
+
 .font--normal {
   font-size: 2.2rem;
   font-family: $font-stack-paragraph;
 
   @media (min-width: 601px) {
     font-size: 3.2rem
+  }
+}
+
+.text--underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    background-color: #86836D;
   }
 }
