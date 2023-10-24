@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
-import { Country } from '../../lib/models';
+import { ActiveSection, Country } from '../../lib/models';
 import { useIsInViewport } from '../../lib/functions';
 import AnimatedElement from '../AnimatedElement';
 
@@ -10,8 +10,15 @@ interface TitleAndCountrySectionProps {
 }
 
 const TitleAndCountrySection = (props: TitleAndCountrySectionProps) => {
+  const [activeSection, setActiveSection] = useState<ActiveSection>();
   const nodeRef = useRef<HTMLDivElement>(null);
   const isInViewport = useIsInViewport(nodeRef, 0.75);
+
+  // useEffect(() => {
+  //   if (isInViewport) {
+  //     setActiveSection();
+  //   }
+  // }, [isLandingInView])
 
   return (
     <section 

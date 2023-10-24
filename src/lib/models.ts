@@ -76,7 +76,7 @@ export type Visibility = 'visible' | 'hidden';
 
 export type AppMode = 'default' | 'wheel';
 
-export type ActiveSection = 'landing' | keyof ResumeConfiguration; 
+export type ActiveSection = 'landing' | 'role+country' | 'introduction' | 'education' | 'experience' | 'contact'; 
 
 export interface IconTypes {
   default: string;

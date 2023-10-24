@@ -7,12 +7,12 @@
   background-color: colors.$color-black;
   transition: width 700ms linear;
 
-    @media (min-width: 900px) {
-      width: 40%;
-      height: 100%;
-
-      &[data-active-section=landing] {
-        width: 0;
-      }
-    }
+  @media (min-width: 768px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100vh;
+    padding: 30px;
+  }
 }

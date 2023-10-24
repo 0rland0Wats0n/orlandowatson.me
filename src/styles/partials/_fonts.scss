@@ -1,33 +1,25 @@
-$font-stack: 'Mulish', sans-serif;
+$font-stack-heading: 'Lustria', serif;
+$font-stack-paragraph: 'Lato', san-serif;
 $font-size-root: 62.5%;
 
-h1, h2, h3, h4, h5 {
-  margin: 0;
-  font-weight: 1000;
+.font--xlarge {
+  font-size: 6.4rem;
+  line-height: 1;
+
+  @media (min-width: 601px) {
+    font-size: 9.6rem
+  }
+
+  @media (min-width: 1368) {
+    font-size: 12.8rem;
+  }
 }
 
-h1 {
-  font-size: 4.5rem;
-}
+.font--normal {
+  font-size: 2.2rem;
+  font-family: $font-stack-paragraph;
 
-h2 {
-  font-size: 3.5rem;
-}
-
-h3 {
-  font-size: 3rem;
-}
-
-h4 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-h5 {
-  font-size: 2rem;
-}
-
-p {
-  font-size: 1.6rem;
-  margin: 0;
+  @media (min-width: 601px) {
+    font-size: 3.2rem
+  }
 }

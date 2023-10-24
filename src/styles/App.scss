@@ -1,11 +1,11 @@
+@use "./partials/colors";
+
 @import "animate.css";
 
 // CONTAINER IMPORTS
-@import "./modules/LeftSide.module.scss";
-@import "./modules/RightSide.module.scss";
+@import "./modules/Landing.module.scss";
 
 // COMPONENT IMPORTS
-@import "./modules/NameAndTitleWithFlag.module.scss";
 @import "./modules/EducationSection.module.scss";
 @import "./modules/ExperienceSection.module.scss";
 @import "./modules/ContactsSection.module.scss";
@@ -19,54 +19,5 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-
-  .App-left {
-    display: flex;
-    flex-direction: column;
-    transition: width 700ms linear;
-
-    .AnimatedScrollIcon {
-      margin-top: 30px;
-    }
-
-    @media (min-width: 900px) {
-      width: 60%;
-      height: 100%;
-      overflow-y: scroll;
-
-      &[data-is-at-start=true] {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      &[data-is-at-start=false] {
-        padding-bottom: 40px;
-
-        & > :first-child {
-          margin-top: auto;
-        }
-      }
-    }
-  }
-
-  .App-right {
-    width: 0;
-    overflow: hidden;
-    color: white;
-    transition: width 700ms linear;
-
-    @media (min-width: 900px) {
-      width: 40%;
-      height: 100%;
-      overflow: hidden;
-
-      &[data-is-at-start=true] {
-        width: 0;
-        overflow: visible;
-      }
-    }
-  }
+  background-color: colors.$color-off-white;
 }

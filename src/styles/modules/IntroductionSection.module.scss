@@ -8,7 +8,7 @@
   color: colors.$color-off-white;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   position: relative;
   overflow: hidden;
@@ -16,6 +16,8 @@
   p {
     text-align: right;
     padding: 15px;
+    font-size: 2rem;
+    max-width: 400px;
   }
 
   .VerticalLine {
@@ -24,6 +26,6 @@
     height: 50%;
     right: 0;
     top: 25%;
-    background-color: colors.$color-gray;
+    background-color: colors.$color-brown;
   }
 }

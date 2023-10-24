@@ -1,19 +1,29 @@
-import React, { useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import AnimatedElement from '../components/AnimatedElement';
 import AnimatedScrollIcon from '../components/AnimatedScrollIcon';
-import { ContainerProps } from '../lib/models';
-import { log } from '../lib/functions';
+import { ActiveSection, ContainerProps } from '../lib/models';
+import { log, useIsInViewport } from '../lib/functions';
 import EducationSection from '../components/ResumeSections/EducationSection';
 import ExperienceSection from '../components/ResumeSections/ExperienceSection';
 import ContactsSection from '../components/ResumeSections/ContactsSection';
 import TitleAndCountrySection from '../components/ResumeSections/TitleAndCountrySection';
 import IntroductionSection from '../components/ResumeSections/IntroductionSection';
+import { SectionContext } from '../App';
 
 type LeftSideProps = ContainerProps;
 
 const LeftSide = (props: LeftSideProps) => {
+  const [activeSection, setActiveSection] = useState<ActiveSection>('landing');
   const leftSideRef = useRef<HTMLDivElement>(null);
+  const landingRef = useRef<HTMLDivElement>(null);
+  const isLandingInView = useIsInViewport(landingRef);
+
+  useEffect(() => {
+    if (isLandingInView) {
+      setActiveSection('landing');
+    }
+  }, [isLandingInView])
 
   const _renderLanding = () => {
     const { name } = props.resumeData;
@@ -21,35 +31,37 @@ const LeftSide = (props: LeftSideProps) => {
     const _handleScrollIconClick = () => log('scroll clicked');
 
     return (
-      <section className="Landing">
-        <AnimatedElement
-          timeout={1250}
-          visibility={'visible'}
-          enterActive='animate__fadeInUp'
-          exitActive='animate__fadeOutUp'
-        >
-          <h1 className="Name">i am {name}</h1>
-        </AnimatedElement>
-        <AnimatedElement
-          timeout={1250}
-          visibility={'visible'}
-          enterActive='animate__fadeInUp'
-          exitActive='animate__fadeOutUp'
-        >
-          <p>this is my live resumè</p>
-        </AnimatedElement>
-        <AnimatedElement
-          timeout={1250}
-          visibility={'visible'}
-          enterActive='animate__fadeIn'
-          exitActive='animate__fadeOut'
-        >
-          <AnimatedScrollIcon 
-            visible
-            onClick={_handleScrollIconClick}
-          />
-        </AnimatedElement>
-      </section>
+      <SectionContext.Provider value={activeSection}>
+        <section className="Landing" ref={landingRef}>
+          <AnimatedElement
+            timeout={1250}
+            visibility={'visible'}
+            enterActive='animate__fadeInUp'
+            exitActive='animate__fadeOutUp'
+          >
+            <h1 className="Name">i am {name}</h1>
+          </AnimatedElement>
+          <AnimatedElement
+            timeout={1250}
+            visibility={'visible'}
+            enterActive='animate__fadeInUp'
+            exitActive='animate__fadeOutUp'
+          >
+            <p>this is my live resumè</p>
+          </AnimatedElement>
+          <AnimatedElement
+            timeout={1250}
+            visibility={'visible'}
+            enterActive='animate__fadeIn'
+            exitActive='animate__fadeOut'
+          >
+            <AnimatedScrollIcon 
+              visible
+              onClick={_handleScrollIconClick}
+            />
+          </AnimatedElement>
+        </section>
+      </SectionContext.Provider>
     )
   }
 

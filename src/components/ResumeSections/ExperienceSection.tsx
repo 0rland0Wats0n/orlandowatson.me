@@ -25,14 +25,14 @@ export default function ExperienceSection({ experiences }: ExperienceSectionProp
       </AnimatedElement>
       <div className="Experience-items">
         {
-          experiences.map(experience => {
+          experiences.map((experience, i) => {
             return (
               <AnimatedElement
                 key={experience.company}
                 visibility={isInViewport ? 'visible' : 'hidden'}
-                timeout={200}
-                enterActive='animate__fadeInLeft'
-                exitActive='animate__fadeOutRight'
+                timeout={1250+(i*1000)}
+                enterActive='animate__fadeInUp'
+                exitActive='animate__fadeOut'
                 className='Experience-item'
               >
                 <section>
