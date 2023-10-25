@@ -29,118 +29,63 @@ const config: ResumeConfiguration = {
     ' adaptability to new environments.'
   },
   education: {
-    data: {
-      school: 'claflin university',
-      type: 'bachelor of science',
-      degree: 'computer science'
+    school: 'claflin university',
+    degree: 'bachelor of science',
+    major: 'computer science'
+  },
+  experience: [
+    {
+      company: 'orlandowatson.me',
+      details: 'orlandowatson.me is an interactive resume designed and developed solely by myself. the ui/ux designs were made using figma while the web app was created using react and deployed in a docker container.',
+      logo: Logo,
+      skills: [
+        'react.js',
+        'javascript/typescript',
+        'sass',
+        'figma',
+        'docker'
+      ]
+    },
+    {
+      company: 'microsoft',
+      details: 'i worked across a range of projects and features at microsoft. these included search and @mentions for the onenote online web app; azure sdks to give developers access communication as a service features like sms and phone numbers; rest apis and azure sdks to provide live media composition capabilities to developers; and a host of other developer tools.',
+      logo: MicrosoftLogo,
+      skills: [
+        'javascript/typescript',
+        'ç#/.net',
+        'azure sdks',
+        'CaaS tools',
+        'rest apis',
+        'dev ex tools',
+        'testing tools',
+        'web apps'
+      ]
     }
-  },
-  experience: {
-    data: [
-      {
-        company: 'orlandowatson.me',
-        details: 'orlandowatson.me is an interactive resume designed and developed solely by myself. the ui/ux designs were made using figma while the web app was created using react and deployed in a docker container.',
-        logo: Logo,
-        skills: [
-          'react.js',
-          'javascript/typescript',
-          'sass',
-          'figma',
-          'docker'
-        ]
-      },
-      {
-        company: 'microsoft',
-        details: 'i worked across a range of projects and features at microsoft. these included search and @mentions for the onenote online web app; azure sdks to give developers access communication as a service features like sms and phone numbers; rest apis and azure sdks to provide live media composition capabilities to developers; and a host of other developer tools.',
-        logo: MicrosoftLogo,
-        skills: [
-          'javascript/typescript',
-          'ç#/.net',
-          'azure sdks',
-          'CaaS tools',
-          'rest apis',
-          'dev ex tools',
-          'testing tools',
-          'web apps'
-        ]
-      }
-    ]
-  },
-  skills: {
-    introduction: 'i try to keep my skills up-to-date through continuous learning and not shying away from new challenges.',
-    data: [
-      {
-        name: 'html/css',
-        score: 0.9,
-        details: 'i have a very strong understanding of semantic html and css and have worked a lot with these languages. i can very efficiently markup and style pages and know the best resources to supplement gaps in my knowledge.'
-      },
-      {
-        name: 'javascript/typescript',
-        score: 0.9,
-        details: 'i have a very strong understanding of javascript and typescript and have worked a lot with these languages. i can very efficiently write advanced javascript and typescript code. i also know the best resources to supplement gaps in my knowledge of javascript and typescript.'
-      },
-      {
-        name: 'python',
-        score: 0.6,
-        details: 'i have a basic understanding of the python language and have only worked on a few projects that required the language. i was able to complete these projects and developed knowledge of the best resources to supplement gaps in my understanding of python.'
-      },
-      {
-        name: 'c#/.net',
-        score: 0.75,
-        details: 'i have a good understanding of the c# language and the .net framework and have worked on a good amount of projects requiring the language. i can write and understand advanced c# code and i know the best resources to supplement gaps in my knowledge of c# and .net.'
-      },
-      {
-        name: 'git',
-        score: 0.85,
-        details: 'i have a strong understanding of git and best practices when working in a git-based version controlled system. i can effectively execute advanced git commands and i know the best resources to supplement gaps in my knowledge of git.'
-      },
-      {
-        name: 'react',
-        score: 0.8,
-        details: 'i have a strong understanding of the react framework and have worked with it in a few professional and personal projects. i can write and understand advanced react techniques and know the best resources to supplement gaps in my knowledge of the framework.'
-      },
-      {
-        name: 'wordpress',
-        score: 0.8,
-        details: 'i have a strong understanding of building wordpress websites and have worked on a number of wordpress projects. i can build and deploy custom themed wordpress websites and know the best resources to supplement gaps in my knowledge of wordpress.'
-      },
-      {
-        name: 'php',
-        score: 0.6,
-        details: 'i have a basic understanding of the php language through my work on wordpress websites. i can read and write php code if required and know the best resources to supplement gaps in my knowledge of the language.'
-      },
-      {
-        name: 'docker',
-        score: 0.5,
-        details: 'i have a basic understanding of docker and some familiarity with its fundamental concepts and functionalities. i have developed and deployed web applications in docker containers and know the best resources to supplement gaps in my knowledge of docker.'
-      }
-    ]
-  },
-  contacts: {
-    data: [
-      {
-        type: 'github',
-        handle: '/0rland0Wats0n',
-        link: 'https://github.com/0rland0Wats0n'
-      },
-      {
-        type: 'linkedin',
-        handle: '/watsonorlando',
-        link: 'https://www.linkedin.com/in/watsonorlando/'
-      },
-      {
-        type: 'x',
-        handle: '@0RLAND0WATS0N',
-        link: 'https://twitter.com/0RLAND0WATS0N'
-      },
-      {
-        type: 'email',
-        handle: 'orlandowatson.me@gmail.com',
-        link: 'mailto:orlandowatson.me@gmail.com?subject=Cool Website. Let\'s Connect!'
-      }
-    ]
-  }
+  ],
+  contacts: [
+    {
+      type: 'github',
+      handle: '/0rland0Wats0n',
+      link: 'https://github.com/0rland0Wats0n'
+    },
+    {
+      type: 'linkedin',
+      handle: '/watsonorlando',
+      link: 'https://www.linkedin.com/in/watsonorlando/'
+    },
+    {
+      type: 'x',
+      handle: '@0RLAND0WATS0N',
+      link: 'https://twitter.com/0RLAND0WATS0N'
+    },
+    {
+      type: 'email',
+      handle: 'orlandowatson.me@gmail.com',
+      link: 'mailto:orlandowatson.me@gmail.com?subject=Cool Website. Let\'s Connect!'
+    }
+  ]
 }
+
 
 export const SocialIcons: Record<ContactKind, IconTypes> = {
   email: {

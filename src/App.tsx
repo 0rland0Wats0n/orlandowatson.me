@@ -7,6 +7,7 @@ import RESUME_DATA from './lib/resume.data';
 import Landing from './containers/Landing';
 import TitleAndCountry from './containers/TitleAndCountry';
 import Introduction from './containers/Introduction';
+import Education from './containers/Education';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Landing name={RESUME_DATA.name} />
       <TitleAndCountry jobTitle={RESUME_DATA.title} country={RESUME_DATA.country.name} />
       <Introduction text={RESUME_DATA.introduction.full} />
+      <Education degree={RESUME_DATA.education.degree} major={RESUME_DATA.education.major} />
     </div>
   );
 }

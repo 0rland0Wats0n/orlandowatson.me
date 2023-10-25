@@ -3,15 +3,9 @@ export interface ResumeConfiguration {
   title: string;
   country: Country;
   introduction: Introduction;
-  education: ResumeSection<Education>;
-  experience: ResumeSection<Experience[]>;
-  skills: ResumeSection<Skill[]>;
-  contacts: ResumeSection<ContactInformation[]>
-}
-
-interface ResumeSection<T> {
-  introduction?: string;
-  data: T
+  education: Education;
+  experience: Experience[];
+  contacts: ContactInformation[];
 }
 
 interface Introduction {
@@ -26,7 +20,7 @@ export interface Country {
 
 export interface Education {
   school: string;
-  type: string;
+  major: string;
   degree: string;
 }
 
