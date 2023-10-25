@@ -12,20 +12,4 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-
-  p {
-    text-align: right;
-    padding: 15px;
-    font-size: 2rem;
-    max-width: 400px;
-  }
-
-  .VerticalLine {
-    position: absolute;
-    width: 20px;
-    height: 50%;
-    right: 0;
-    top: 25%;
-    background-color: colors.$color-brown;
-  }
 }
