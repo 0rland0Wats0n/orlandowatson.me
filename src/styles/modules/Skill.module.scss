@@ -1,0 +1,8 @@
+@use "../partials/colors";
+
+.Skill {
+  background-color: colors.$color-brown-dark;
+  color: colors.$color-off-white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}

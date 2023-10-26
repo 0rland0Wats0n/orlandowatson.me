@@ -4,6 +4,7 @@ import { Experience } from '../lib/models';
 import { useIsInViewport } from '../lib/functions';
 import AnimatedElement from './AnimatedElement';
 import Text from './Text';
+import Skill from './Skill';
 
 interface ExperienceItemProps {
   experience: Experience;
@@ -13,6 +14,32 @@ interface ExperienceItemProps {
 const ExperienceItem = ({ experience, dark }: ExperienceItemProps) => {
   const itemRef = useRef<HTMLDivElement>(null);
   const isInView = useIsInViewport(itemRef, 0.65);
+
+  const _renderSkills = (skills?: string[]) => {
+    if (!skills || skills.length === 0) {
+      return null;
+    }
+
+    return (
+      <AnimatedElement
+        timeout={2000}
+        visibility={isInView ? 'visible' : 'hidden'}
+        enterActive='animate__fadeInUp'
+        exitActive='animate__fadeOutDown'
+        className='Skills'
+      >
+        <section>
+          {
+            skills.map(skill => {
+              return (
+                <Skill key={skill} skill={skill} />
+              )
+            })
+          }
+        </section>
+      </AnimatedElement>
+    )
+  }
 
   return (
     <div 
@@ -39,7 +66,16 @@ const ExperienceItem = ({ experience, dark }: ExperienceItemProps) => {
           <Text size='above-average'>{experience.company}</Text>
         </AnimatedElement>
       </section>
-      <Text className={`${dark ? 'color--white' : ''}`}>{experience.details}</Text>
+      <AnimatedElement
+        timeout={2000}
+        visibility={isInView ? 'visible' : 'hidden'}
+        enterActive='animate__fadeIn'
+        exitActive='animate__fadeOut'
+        className={`${dark ? 'color--white' : ''}`}
+      >
+        <Text>{experience.details}</Text>
+      </AnimatedElement>
+      {_renderSkills(experience.skills)}
     </div>
   )
 }
