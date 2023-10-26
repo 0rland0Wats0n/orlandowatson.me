@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 
-import { Experience } from '../lib/models';
+import { Experience, Project } from '../lib/models';
 import { useIsInViewport } from '../lib/functions';
 import AnimatedElement from './AnimatedElement';
 import Text from './Text';
 import Skill from './Skill';
+import ProjectItem from './Project';
 
 interface ExperienceItemProps {
   experience: Experience;
@@ -13,7 +14,7 @@ interface ExperienceItemProps {
 
 const ExperienceItem = ({ experience, dark }: ExperienceItemProps) => {
   const itemRef = useRef<HTMLDivElement>(null);
-  const isInView = useIsInViewport(itemRef, 0.65);
+  const isInView = useIsInViewport(itemRef, 0.1);
 
   const _renderSkills = (skills?: string[]) => {
     if (!skills || skills.length === 0) {
@@ -33,6 +34,32 @@ const ExperienceItem = ({ experience, dark }: ExperienceItemProps) => {
             skills.map(skill => {
               return (
                 <Skill key={skill} skill={skill} />
+              )
+            })
+          }
+        </section>
+      </AnimatedElement>
+    )
+  }
+
+  const _renderProjects = (projects?: Project[]) => {
+    if (!projects || projects.length === 0) {
+      return null;
+    }
+
+    return (
+      <AnimatedElement
+        timeout={2000}
+        visibility={isInView ? 'visible' : 'hidden'}
+        enterActive='animate__fadeInUp'
+        exitActive='animate__fadeOutDown'
+        className='Projects'
+      >
+        <section>
+          {
+            projects.map(project => {
+              return (
+                <ProjectItem key={project.name} project={project} />
               )
             })
           }
@@ -76,6 +103,7 @@ const ExperienceItem = ({ experience, dark }: ExperienceItemProps) => {
         <Text>{experience.details}</Text>
       </AnimatedElement>
       {_renderSkills(experience.skills)}
+      {_renderProjects(experience.projects)}
     </div>
   )
 }

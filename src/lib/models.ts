@@ -34,7 +34,7 @@ export interface Experience {
 
 export interface Project {
   name: string;
-  details: string;
+  details: React.ReactNode;
   skills?: string[];
 }
 
