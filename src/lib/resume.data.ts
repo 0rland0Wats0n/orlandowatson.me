@@ -40,7 +40,8 @@ const config: ResumeConfiguration = {
       logo: Logo,
       skills: [
         'react.js',
-        'javascript/typescript',
+        'javascript',
+        'typescript',
         'sass',
         'figma',
         'docker'
@@ -48,17 +49,34 @@ const config: ResumeConfiguration = {
     },
     {
       company: 'microsoft',
-      details: 'i worked across a range of projects and features at microsoft. these included search and @mentions for the onenote online web app; azure sdks to give developers access communication as a service features like sms and phone numbers; rest apis and azure sdks to provide live media composition capabilities to developers; and a host of other developer tools.',
+      details: 'i worked across a range of teams, projects and features at microsoft. these included:',
       logo: MicrosoftLogo,
-      skills: [
-        'javascript/typescript',
-        'ç#/.net',
-        'azure sdks',
-        'CaaS tools',
-        'rest apis',
-        'dev ex tools',
-        'testing tools',
-        'web apps'
+      projects: [
+        {
+          name: 'onenote online',
+          details: 'while on the onenote online team i worked on several features ranging from search and @ mentions within within pages.',
+          skills: ['javascript', 'typescript', 'c#', 'script#', 'react.js']
+        },
+        {
+          name: 'azure communications phone number javascript library',
+          details: 'i worked on and published the first version of <a class="color--blue text--underline" href="https://www.npmjs.com/package/@azure/communication-phone-numbers" target="_blank" rel="noreferrer">@azure/communication-phone-numbers</a> to npmjs. this library provides capabilities for phone number administration.',
+          skills: ['javascript', 'typescript', 'c#', '.net']
+        },
+        {
+          name: 'azure communication sms javascript library',
+          details: 'i worked on and published the first version of <a class="color--blue text--underline" href="https://www.npmjs.com/package/@azure/communcication-sms" target="_blank" rel="noreferrer">@azure/communication-sms</a> to npmjs. this library gives developers the ability to send SMS messages from a phone numbers purchased through the azure ui or the phone numbers library.',
+          skills: ['javascript', 'typescript', 'c#', '.net']
+        },
+        {
+          name: 'azure communication rooms',
+          details: 'i worked on the azure communication rooms rest api and published the latest version of <a class="color--blue text--underline" href="https://www.npmjs.com/package/@azure/communication-rooms" target="_blank" rel="noreferrer">@azure/communication-rooms</a> to npm js.',
+          skills: ['javascript', 'typescript', 'c#', '.net']
+        },
+        {
+          name: 'media composition',
+          details: 'i worked on media composition apis and sdks to give developers teams like live video composition capabilities.',
+          skills: ['javascript', 'typescript', 'c#', '.net']
+        }
       ]
     }
   ],

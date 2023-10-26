@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 
-type TextSize = 'xlarge' | 'large' | 'normal' | 'small';
+type TextSize = 'xlarge' | 'large' | 'above-average' | 'normal' | 'small';
 
 interface TextProps extends PropsWithChildren {
   size?: TextSize;

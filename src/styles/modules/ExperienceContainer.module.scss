@@ -1,0 +1,53 @@
+@use "../partials/colors";
+
+.Experience {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: colors.$color-brown;
+
+  .Heading {
+    padding: 3rem 3rem 0;
+    color: colors.$color-off-white;
+    width: 100%;
+  }
+
+  .ExperienceItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 3rem;
+
+    &[data-is-dark=true] {
+      color: colors.$color-off-white;
+    }
+
+    &[data-is-dark=false] {
+      background-color: colors.$color-off-white;
+      color: colors.$color-black;
+    }
+
+    &:last-of-type {
+      flex-grow: 1;
+    }
+
+    .LogoTitle {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      gap: 1rem;
+
+      img {
+        width: 2.8rem;
+        max-width: 100%;
+      }
+    }
+  }
+}

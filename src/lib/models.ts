@@ -28,7 +28,14 @@ export interface Experience {
   company: string;
   details: string;
   logo: string;
-  skills: string[];
+  skills?: string[];
+  projects?: Project[];
+}
+
+export interface Project {
+  name: string;
+  details: string;
+  skills?: string[];
 }
 
 export interface Skill {

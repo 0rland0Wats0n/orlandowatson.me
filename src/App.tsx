@@ -8,6 +8,7 @@ import Landing from './containers/Landing';
 import TitleAndCountry from './containers/TitleAndCountry';
 import Introduction from './containers/Introduction';
 import Education from './containers/Education';
+import ExperienceContainer from './containers/ExperienceContainer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <TitleAndCountry jobTitle={RESUME_DATA.title} country={RESUME_DATA.country.name} />
       <Introduction text={RESUME_DATA.introduction.full} />
       <Education degree={RESUME_DATA.education.degree} major={RESUME_DATA.education.major} />
+      <ExperienceContainer experiences={RESUME_DATA.experience} />
     </div>
   );
 }
