@@ -1,0 +1,56 @@
+@use "../partials/colors";
+@use "../partials/fonts";
+
+.Contacts {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: colors.$color-brown-green;
+  color: colors.$color-off-white;
+
+  .Heading {
+    padding: 3rem 3rem 0;
+    width: 80rem;
+    max-width: 100%;
+  }
+
+  .ContactItems {
+    width: 80rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    gap: 2rem;
+  }
+
+  .Download {
+    width: 100%;
+    background-color: colors.$color-brown;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      display: block;
+      width: 20rem;
+      padding: 1rem 3rem;
+      border: none;
+      border-radius: 0.5rem;
+      border-bottom: 0.1rem solid colors.$color-brown-green;
+      border-right: 0.1rem solid colors.$color-brown-green;
+      background-color: colors.$color-brown-dark;
+      color: colors.$color-off-white;
+      font-size: 2rem;
+      font-family: fonts.$font-stack-heading;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+}

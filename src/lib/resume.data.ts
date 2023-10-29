@@ -1,25 +1,17 @@
 import React from 'react';
 
-import { ContactKind, IconTypes, ResumeConfiguration } from './models';
-import JamaicanFlag from '../media/jamaica.png';
+import { ContactKind, ResumeConfiguration } from './models';
 import MicrosoftLogo from '../media/microsoft.png';
 import Logo from '../media/logo.png';
 import EmailLogo from '../media/email.png';
-import EmailLogoWhite from '../media/email-white.png';
 import TwitterXLogo from '../media/twitterx.png';
-import TwitterXLogoWhite from '../media/twitterx-white.png';
 import GithubLogo from '../media/github.png';
-import GithubLogoWhite from '../media/github-white.png';
 import LinkedinLogo from '../media/linkedin.png';
-import LinkedinLogoWhite from '../media/linkedin-white.png';
 
 const config: ResumeConfiguration = {
   name: 'orlando',
   title: 'software engineer',
-  country: {
-    name: 'jamaica',
-    flag: JamaicanFlag
-  },
+  country: 'jamaica',
   introduction: {
     short: 'i have a deep passion for learning and building' +
     ' customer-focused web experiences using the latest available web technologies.',
@@ -89,7 +81,7 @@ const config: ResumeConfiguration = {
               'a',
               { 
                 className: 'color--blue text--underline',
-                href: 'https://www.npmjs.com/package/@azure/communcication-sms',
+                href: 'https://www.npmjs.com/package/@azure/communication-sms',
                 target: '_blank',
                 rel: 'noreferrer'
               },
@@ -145,30 +137,18 @@ const config: ResumeConfiguration = {
     },
     {
       type: 'email',
-      handle: 'orlandowatson.me@gmail.com',
+      handle: 'orlandowatson.me@gmail',
       link: 'mailto:orlandowatson.me@gmail.com?subject=Cool Website. Let\'s Connect!'
     }
   ]
 }
 
 
-export const SocialIcons: Record<ContactKind, IconTypes> = {
-  email: {
-    default: EmailLogo,
-    white: EmailLogoWhite
-  },
-  x: {
-    default: TwitterXLogo,
-    white: TwitterXLogoWhite
-  },
-  github: {
-    default: GithubLogo,
-    white: GithubLogoWhite
-  },
-  linkedin: {
-    default: LinkedinLogo,
-    white: LinkedinLogoWhite
-  }
+export const SocialIcons: Record<ContactKind, string> = {
+  email: EmailLogo,
+  x: TwitterXLogo,
+  github: GithubLogo,
+  linkedin: LinkedinLogo
 }
 
 export default config;

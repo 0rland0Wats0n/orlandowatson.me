@@ -1,0 +1,27 @@
+@use "../partials/colors";
+
+.SocialButton {
+  width: 18rem;
+  height: 18rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$color-brown-dark;
+
+  img {
+    width: 4rem;
+    max-width: 100%;
+  }
+
+  .Divider {
+    width: 5rem;
+    height: 0.2rem;
+    border-radius: 0.2rem;
+    background-color: colors.$color-off-white;
+    margin: 1rem 0 0.5rem;
+  }
+}

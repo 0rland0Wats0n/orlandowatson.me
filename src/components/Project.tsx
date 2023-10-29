@@ -23,7 +23,7 @@ const ProjectItem = ({ project }: ProjectProps) => {
         timeout={2000}
         visibility={isInView ? 'visible' : 'hidden'}
         enterActive='animate__fadeInUp'
-        exitActive='animate__fadeOutDown'
+        exitActive='animate__fadeOut'
         className='Skills'
       >
         <section>
@@ -45,7 +45,7 @@ const ProjectItem = ({ project }: ProjectProps) => {
         timeout={2000}
         visibility={isInView ? 'visible' : 'hidden'}
         enterActive='animate__fadeInUp'
-        exitActive='animate__fadeOutDown'
+        exitActive='animate__fadeOut'
         className='Name color--brown'
       >
         <Text size='above-average'>{project.name}</Text>
@@ -54,7 +54,7 @@ const ProjectItem = ({ project }: ProjectProps) => {
         timeout={2000}
         visibility={isInView ? 'visible' : 'hidden'}
         enterActive='animate__fadeInUp'
-        exitActive='animate__fadeOutDown'
+        exitActive='animate__fadeOut'
       >
         <Text>{project.details}</Text>
       </AnimatedElement>

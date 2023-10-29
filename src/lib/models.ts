@@ -1,7 +1,7 @@
 export interface ResumeConfiguration {
   name: string;
   title: string;
-  country: Country;
+  country: string;
   introduction: Introduction;
   education: Education;
   experience: Experience[];
@@ -50,14 +50,6 @@ export interface ContactInformation {
   type: ContactKind;
   handle: string;
   link: string;
-}
-
-export enum ProficiencyLevel {
-  fundamental = 'fundamental awareness',
-  novice = 'novice',
-  intermediate = 'intermediate',
-  advanced = 'advanced',
-  expert = 'expert'
 }
 
 export type TransitionDirection = 'forward' | 'backward' | 'none';

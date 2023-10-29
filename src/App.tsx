@@ -9,15 +9,17 @@ import TitleAndCountry from './containers/TitleAndCountry';
 import Introduction from './containers/Introduction';
 import Education from './containers/Education';
 import ExperienceContainer from './containers/ExperienceContainer';
+import Contacts from './containers/Contacts';
 
 function App() {
   return (
     <div className="App">
       <Landing name={RESUME_DATA.name} />
-      <TitleAndCountry jobTitle={RESUME_DATA.title} country={RESUME_DATA.country.name} />
+      <TitleAndCountry jobTitle={RESUME_DATA.title} country={RESUME_DATA.country} />
       <Introduction text={RESUME_DATA.introduction.full} />
       <Education degree={RESUME_DATA.education.degree} major={RESUME_DATA.education.major} />
       <ExperienceContainer experiences={RESUME_DATA.experience} />
+      <Contacts contacts={RESUME_DATA.contacts} />
     </div>
   );
 }

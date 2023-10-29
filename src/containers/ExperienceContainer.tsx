@@ -11,7 +11,7 @@ interface ExperienceContainerProps {
 
 const ExperienceContainer = ({ experiences }: ExperienceContainerProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useIsInViewport(containerRef);
+  const isInView = useIsInViewport(containerRef, 0.1);
 
   return (
     <section className="Experience" ref={containerRef}>
@@ -19,7 +19,7 @@ const ExperienceContainer = ({ experiences }: ExperienceContainerProps) => {
         timeout={2000}
         visibility={isInView ? 'visible' : 'hidden'}
         enterActive='animate__fadeInDown'
-        exitActive='animate__fadeOutUp'
+        exitActive='animate__fadeOut'
         className='Heading'
       >
         <Text size='large'>things i've worked on:</Text>

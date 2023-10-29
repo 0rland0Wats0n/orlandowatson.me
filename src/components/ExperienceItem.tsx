@@ -26,7 +26,7 @@ const ExperienceItem = ({ experience, dark }: ExperienceItemProps) => {
         timeout={2000}
         visibility={isInView ? 'visible' : 'hidden'}
         enterActive='animate__fadeInUp'
-        exitActive='animate__fadeOutDown'
+        exitActive='animate__fadeOutLeft'
         className='Skills'
       >
         <section>
@@ -48,14 +48,7 @@ const ExperienceItem = ({ experience, dark }: ExperienceItemProps) => {
     }
 
     return (
-      <AnimatedElement
-        timeout={2000}
-        visibility={isInView ? 'visible' : 'hidden'}
-        enterActive='animate__fadeInUp'
-        exitActive='animate__fadeOutDown'
-        className='Projects'
-      >
-        <section>
+        <section className="Projects">
           {
             projects.map(project => {
               return (
@@ -64,7 +57,6 @@ const ExperienceItem = ({ experience, dark }: ExperienceItemProps) => {
             })
           }
         </section>
-      </AnimatedElement>
     )
   }
 
@@ -87,7 +79,7 @@ const ExperienceItem = ({ experience, dark }: ExperienceItemProps) => {
           timeout={2000}
           visibility={isInView ? 'visible' : 'hidden'}
           enterActive='animate__fadeInDown'
-          exitActive='animate__fadeOutUp'
+          exitActive='animate__fadeOut'
           className={`${dark ? 'color--white' : 'color--brown'}`}
         >
           <Text size='above-average'>{experience.company}</Text>
