@@ -1,6 +1,6 @@
 import './styles/App.scss';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import ResumeContext, { DefaultResumeData } from './lib/ResumeContext';
 
@@ -12,6 +12,10 @@ import ExperienceContainer from './containers/ExperienceContainer';
 import Contacts from './containers/Contacts';
 
 function App() {
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+  })
+
   return (
     <div className="App">
       <ResumeContext.Provider value={DefaultResumeData}>

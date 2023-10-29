@@ -9,15 +9,15 @@ import ResumeContext from '../lib/ResumeContext';
 const Contacts = () => {
   const { contacts } = useContext(ResumeContext);
   const contactsRef = useRef<HTMLDivElement>(null);
-  const isInView = useIsInViewport(contactsRef, 0.4);
+  const isInView = useIsInViewport(contactsRef, 0.25);
 
   return (
     <section className="Contacts" ref={contactsRef}>
       <AnimatedElement
         timeout={2000}
         visibility={isInView ? 'visible' : 'hidden'}
-        enterActive='animate__fadeInDown'
-        exitActive='animate__fadeOutUp'
+        enterActive='animate__fadeInUp'
+        exitActive='animate__fadeOut'
         className='Heading'
       >
         <Text size='large'>find me online</Text>

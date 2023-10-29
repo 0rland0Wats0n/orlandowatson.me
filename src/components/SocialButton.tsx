@@ -18,19 +18,25 @@ const SocialButton = ({ contact }: SocialButtonProps) => {
   }
 
   return (
-    <AnimatedElement
-      className="SocialButton"
-      timeout={2000}
-      visibility={isInView ? 'visible' : 'hidden'}
-      enterActive='animate__bounceInn'
-      exitActive='animate__bounceOut'
-    >
-      <div ref={buttonRef} onClick={_handleButtonClick}>
-        <img src={SocialIcons[contact.type]} alt="contact icon" />
+      <div ref={buttonRef} className="SocialButton" onClick={_handleButtonClick}>
+        <AnimatedElement
+          timeout={2000}
+          visibility={isInView ? 'visible' : 'hidden'}
+          enterActive='animate__fadeInDown'
+          exitActive='animate__fadeOut'
+        >
+          <img src={SocialIcons[contact.type]} alt="contact icon" />
+        </AnimatedElement>
         <span className="Divider" />
-        <Text size='small'>{contact.handle}</Text>
+        <AnimatedElement
+          timeout={2000}
+          visibility={isInView ? 'visible' : 'hidden'}
+          enterActive='animate__fadeInUp'
+          exitActive='animate__fadeOut'
+        >
+          <Text size='small'>{contact.handle}</Text>
+        </AnimatedElement>
       </div>
-    </AnimatedElement>
   )
 }
 

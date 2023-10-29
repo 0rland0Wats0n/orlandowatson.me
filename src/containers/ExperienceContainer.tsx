@@ -15,7 +15,7 @@ const ExperienceContainer = () => {
       <AnimatedElement
         timeout={2000}
         visibility={isInView ? 'visible' : 'hidden'}
-        enterActive='animate__fadeInDown'
+        enterActive='animate__fadeInUp'
         exitActive='animate__fadeOut'
         className='Heading'
       >

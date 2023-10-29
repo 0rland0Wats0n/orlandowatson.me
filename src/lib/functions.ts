@@ -1,16 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
 /**
- * Logs to the console if not in a production env
- * @param message Message to log
- */
-export const log = (message: string) => {
-  if (process.env.NODE_ENV !== 'production') {
-    console.log(message);
-  }
-}
-
-/**
  * Checks whether the given element is in the viewport
  * @param ref Reference to the element being observed
  * @returns True if is intersecting viewport

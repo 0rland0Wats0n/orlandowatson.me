@@ -11,38 +11,22 @@ const TitleAndCountry = () => {
 
   return (
     <section className="TitleAndCountry" ref={titleCountryRef}>
-      <AnimatedElement
-        visibility={isInView ? 'visible' : 'hidden'}
-        timeout={1750}
-        enterActive='animate__fadeIn'
-        exitActive='animate__fadeOut'
-        className='color--brown'
-      >
-        <Text size='large'>i am a</Text>
-      </AnimatedElement>
+      <Text size='large' className='color--brown'>i am a</Text>
       <AnimatedElement
         visibility={isInView ? 'visible' : 'hidden'}
         timeout={2250}
-        enterActive='animate__fadeInLeft'
-        exitActive='animate__fadeOutLeft'
+        enterActive='animate__fadeInUp'
+        exitActive='animate__fadeOut'
         className='color--brown text--underline'
       >
         <Text size='large'>{role}</Text>
       </AnimatedElement>
-      <AnimatedElement
-        visibility={isInView ? 'visible' : 'hidden'}
-        timeout={1750}
-        enterActive='animate__fadeIn'
-        exitActive='animate__fadeOut'
-        className='color--brown'
-      >
-        <Text size='large'>from</Text>
-      </AnimatedElement>
+      <Text size='large' className='color--brown'>from</Text>
       <AnimatedElement
         visibility={isInView ? 'visible' : 'hidden'}
         timeout={2250}
-        enterActive='animate__fadeInLeft'
-        exitActive='animate__fadeOutLeft'
+        enterActive='animate__fadeInUp'
+        exitActive='animate__fadeOut'
         className='color--brown text--underline'
       >
         <Text size='large'>{country}</Text>

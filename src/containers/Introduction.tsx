@@ -14,8 +14,8 @@ const Introduction = () => {
       <AnimatedElement
         timeout={1250}
         visibility={isInView ? 'visible' : 'hidden'}
-        enterActive='animate__fadeInLeft'
-        exitActive='animate__fadeOutLeft'
+        enterActive='animate__fadeInUp'
+        exitActive='animate__fadeOut'
       >
         <Text quote>{introduction}</Text>
       </AnimatedElement>

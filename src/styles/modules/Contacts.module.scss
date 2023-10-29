@@ -13,16 +13,17 @@
 
   .Heading {
     padding: 3rem 3rem 0;
-    width: 80rem;
+    width: 56rem;
     max-width: 100%;
   }
 
   .ContactItems {
-    width: 80rem;
+    width: 56rem;
     max-width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     padding: 3rem;
     gap: 2rem;
