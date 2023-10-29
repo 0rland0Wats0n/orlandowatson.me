@@ -1,16 +1,11 @@
-export interface ResumeConfiguration {
+export interface ResumeData {
   name: string;
-  title: string;
+  role: string;
   country: string;
-  introduction: Introduction;
+  introduction: string;
   education: Education;
   experience: Experience[];
   contacts: ContactInformation[];
-}
-
-interface Introduction {
-  short: string;
-  full: string;
 }
 
 export interface Country {
@@ -74,9 +69,4 @@ export type ActiveSection = 'landing' | 'role+country' | 'introduction' | 'educa
 export interface IconTypes {
   default: string;
   white: string;
-}
-
-export interface ContainerProps {
-  resumeData: ResumeConfiguration;
-  windowWidth: number;
 }

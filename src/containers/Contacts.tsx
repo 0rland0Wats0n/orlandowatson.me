@@ -1,16 +1,13 @@
-import React, { useRef } from 'react';
-import { ContactInformation } from '../lib/models';
+import React, { useContext, useRef } from 'react';
 import { useIsInViewport } from '../lib/functions';
 import AnimatedElement from '../components/AnimatedElement';
 import Text from '../components/Text';
 import SocialButton from '../components/SocialButton';
 import ResumeFile from '../lib/download/resume_orlandowatson.pdf';
+import ResumeContext from '../lib/ResumeContext';
 
-interface ContactsProps {
-  contacts: ContactInformation[];
-}
-
-const Contacts = ({ contacts }: ContactsProps) => {
+const Contacts = () => {
+  const { contacts } = useContext(ResumeContext);
   const contactsRef = useRef<HTMLDivElement>(null);
   const isInView = useIsInViewport(contactsRef, 0.4);
 

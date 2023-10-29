@@ -1,26 +1,14 @@
-import React from 'react';
+import React, { createContext } from 'react';
 
-import { ContactKind, ResumeConfiguration } from './models';
+import { ResumeData } from './models';
 import MicrosoftLogo from '../media/microsoft.png';
 import Logo from '../media/logo.png';
-import EmailLogo from '../media/email.png';
-import TwitterXLogo from '../media/twitterx.png';
-import GithubLogo from '../media/github.png';
-import LinkedinLogo from '../media/linkedin.png';
 
-const config: ResumeConfiguration = {
+export const DefaultResumeData: ResumeData = {
   name: 'orlando',
-  title: 'software engineer',
+  role: 'software engineer',
   country: 'jamaica',
-  introduction: {
-    short: 'i have a deep passion for learning and building' +
-    ' customer-focused web experiences using the latest available web technologies.',
-    full: 'i have a deep passion for learning and building' +
-    ' customer-focused web experiences using the latest available web technologies.' +
-    ' i love the challenge of working with, and discovering new technologies. ' + 
-    'i look forward to a professional opportunity to flex both my current skills and' +
-    ' adaptability to new environments.'
-  },
+  introduction: 'i have a deep passion for learning and building customer-focused web experiences using the latest available web technologies. i love the challenge of working with, and discovering new technologies. i look forward to a professional opportunity to flex both my current skills and adaptability to new environments.',
   education: {
     school: 'claflin university',
     degree: 'bachelor of science',
@@ -29,7 +17,7 @@ const config: ResumeConfiguration = {
   experience: [
     {
       company: 'orlandowatson.me',
-      details: 'orlandowatson.me is an interactive resume designed and developed solely by myself. the ui/ux designs were made using figma while the web app was created using react and deployed in a docker container.',
+      details: 'orlandowatson.me is an interactive resume designed and developed by me. the ui/ux designs were made using figma while the web app was created using react.js',
       logo: Logo,
       skills: [
         'react.js',
@@ -37,18 +25,17 @@ const config: ResumeConfiguration = {
         'typescript',
         'node.js',
         'sass',
-        'figma',
-        'docker'
+        'figma'      
       ]
     },
     {
       company: 'microsoft',
-      details: 'i worked across a range of teams, projects and features at microsoft. these included:',
+      details: 'i started working at microsoft right after college and worked across a few teams, projects and features. these included:',
       logo: MicrosoftLogo,
       projects: [
         {
           name: 'onenote online',
-          details: 'while on the onenote online team i worked on several features ranging from search and @ mentions within within pages.',
+          details: 'while on the onenote online team i worked on several features and projects. i worked on implementing page-level search for notebooks; adding page-level at-mentions; and numerous bug fixes and customer issues.',
           skills: ['javascript', 'typescript', 'c#', 'script#', 'react.js', 'node.js']
         },
         {
@@ -113,7 +100,7 @@ const config: ResumeConfiguration = {
         },
         {
           name: 'media composition',
-          details: 'i worked on media composition apis and sdks to give developers teams like live video composition capabilities.',
+          details: 'i worked on researching, designing and developing microsoft\'s media composition layout solution to give developers live media composition capabilities through azure. this worked involved working on azure sdks, rest apis and more backend related tasks.',
           skills: ['javascript', 'typescript', 'node.js', 'c#', '.net']
         }
       ]
@@ -143,12 +130,6 @@ const config: ResumeConfiguration = {
   ]
 }
 
+const ResumeContext = createContext<ResumeData>(DefaultResumeData);
 
-export const SocialIcons: Record<ContactKind, string> = {
-  email: EmailLogo,
-  x: TwitterXLogo,
-  github: GithubLogo,
-  linkedin: LinkedinLogo
-}
-
-export default config;
+export default ResumeContext;

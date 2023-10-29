@@ -2,7 +2,7 @@ import './styles/App.scss';
 
 import React from 'react';
 
-import RESUME_DATA from './lib/resume.data';
+import ResumeContext, { DefaultResumeData } from './lib/ResumeContext';
 
 import Landing from './containers/Landing';
 import TitleAndCountry from './containers/TitleAndCountry';
@@ -14,12 +14,14 @@ import Contacts from './containers/Contacts';
 function App() {
   return (
     <div className="App">
-      <Landing name={RESUME_DATA.name} />
-      <TitleAndCountry jobTitle={RESUME_DATA.title} country={RESUME_DATA.country} />
-      <Introduction text={RESUME_DATA.introduction.full} />
-      <Education degree={RESUME_DATA.education.degree} major={RESUME_DATA.education.major} />
-      <ExperienceContainer experiences={RESUME_DATA.experience} />
-      <Contacts contacts={RESUME_DATA.contacts} />
+      <ResumeContext.Provider value={DefaultResumeData}>
+        <Landing />
+        <TitleAndCountry />
+        <Introduction />
+        <Education />
+        <ExperienceContainer />
+        <Contacts />
+      </ResumeContext.Provider>
     </div>
   );
 }

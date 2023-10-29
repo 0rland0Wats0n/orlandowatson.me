@@ -1,14 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useIsInViewport } from '../lib/functions';
 import AnimatedElement from '../components/AnimatedElement';
 import Text from '../components/Text';
+import ResumeContext from '../lib/ResumeContext';
 
-interface EducationProps {
-  degree: string;
-  major: string;
-}
-
-const Education = ({ degree, major }: EducationProps) => {
+const Education = () => {
+  const { education } = useContext(ResumeContext);
   const educationRef = useRef<HTMLDivElement>(null);
   const isInView = useIsInViewport(educationRef, 0.5);
 
@@ -30,7 +27,7 @@ const Education = ({ degree, major }: EducationProps) => {
         exitActive='animate__fadeOutLeft'
         className='color--brown text--underline'
       >
-        <Text size='large'>{degree}</Text>
+        <Text size='large'>{education.degree}</Text>
       </AnimatedElement>
       <AnimatedElement
         visibility={isInView ? 'visible' : 'hidden'}
@@ -48,7 +45,7 @@ const Education = ({ degree, major }: EducationProps) => {
         exitActive='animate__fadeOutLeft'
         className='color--brown text--underline'
       >
-        <Text size='large'>{major}</Text>
+        <Text size='large'>{education.major}</Text>
       </AnimatedElement>
     </section>
   )

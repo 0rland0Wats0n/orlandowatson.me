@@ -1,15 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useIsInViewport } from '../lib/functions';
 
 import Text from '../components/Text';
 import AnimatedElement from '../components/AnimatedElement';
 import AnimatedScrollIcon from '../components/AnimatedScrollIcon';
+import ResumeContext from '../lib/ResumeContext';
 
-interface LandingProps {
-  name: string;
-}
-
-const Landing = ({ name }: LandingProps) => {
+const Landing = () => {
+  const { name } = useContext(ResumeContext);
   const landingRef = useRef<HTMLDivElement>(null);
   const isInView = useIsInViewport(landingRef, 0.5);
   

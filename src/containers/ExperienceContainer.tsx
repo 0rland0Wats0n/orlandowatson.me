@@ -1,15 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useIsInViewport } from '../lib/functions';
-import { Experience } from '../lib/models';
 import Text from '../components/Text';
 import ExperienceItem from '../components/ExperienceItem';
 import AnimatedElement from '../components/AnimatedElement';
+import ResumeContext from '../lib/ResumeContext';
 
-interface ExperienceContainerProps {
-  experiences: Experience[]
-}
-
-const ExperienceContainer = ({ experiences }: ExperienceContainerProps) => {
+const ExperienceContainer = () => {
+  const { experience } = useContext(ResumeContext);
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useIsInViewport(containerRef, 0.1);
 
@@ -25,10 +22,10 @@ const ExperienceContainer = ({ experiences }: ExperienceContainerProps) => {
         <Text size='large'>things i've worked on:</Text>
       </AnimatedElement>
       {
-        experiences.map((experience, i) => {
+        experience.map((exp, i) => {
           const isOdd = Math.floor((i+1)/2) === 1;
           return (
-            <ExperienceItem experience={experience} dark={!isOdd} />
+            <ExperienceItem experience={exp} dark={!isOdd} />
           )
         })
       }

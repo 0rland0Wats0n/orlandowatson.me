@@ -2,8 +2,8 @@ import React, { useRef } from 'react';
 import { ContactInformation } from '../lib/models';
 import { useIsInViewport } from '../lib/functions';
 import AnimatedElement from './AnimatedElement';
-import { SocialIcons } from '../lib/resume.data';
 import Text from './Text';
+import SocialIcons from '../lib/SocialIcons';
 
 interface SocialButtonProps {
   contact: ContactInformation;

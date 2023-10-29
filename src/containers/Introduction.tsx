@@ -1,13 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useIsInViewport } from '../lib/functions';
 import AnimatedElement from '../components/AnimatedElement';
 import Text from '../components/Text';
+import ResumeContext from '../lib/ResumeContext';
 
-interface IntroductionProps {
-  text: string;
-}
-
-const Introduction = ({ text }: IntroductionProps) => {
+const Introduction = () => {
+  const { introduction } = useContext(ResumeContext);
   const introductionRef = useRef<HTMLDivElement>(null);
   const isInView = useIsInViewport(introductionRef);
 
@@ -19,7 +17,7 @@ const Introduction = ({ text }: IntroductionProps) => {
         enterActive='animate__fadeInLeft'
         exitActive='animate__fadeOutLeft'
       >
-        <Text quote>{text}</Text>
+        <Text quote>{introduction}</Text>
       </AnimatedElement>
     </section>
   )

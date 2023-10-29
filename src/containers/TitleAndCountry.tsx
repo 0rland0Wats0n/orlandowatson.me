@@ -1,14 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useIsInViewport } from '../lib/functions';
 import AnimatedElement from '../components/AnimatedElement';
 import Text from '../components/Text';
+import ResumeContext from '../lib/ResumeContext';
 
-interface TitleCountryProps {
-  jobTitle: string;
-  country: string;
-}
-
-const TitleAndCountry = ({ jobTitle, country }: TitleCountryProps) => {
+const TitleAndCountry = () => {
+  const { country, role } = useContext(ResumeContext);
   const titleCountryRef = useRef<HTMLDivElement>(null);
   const isInView = useIsInViewport(titleCountryRef, 0.5);
 
@@ -30,7 +27,7 @@ const TitleAndCountry = ({ jobTitle, country }: TitleCountryProps) => {
         exitActive='animate__fadeOutLeft'
         className='color--brown text--underline'
       >
-        <Text size='large'>{jobTitle}</Text>
+        <Text size='large'>{role}</Text>
       </AnimatedElement>
       <AnimatedElement
         visibility={isInView ? 'visible' : 'hidden'}
