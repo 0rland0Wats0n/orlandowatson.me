@@ -25,7 +25,7 @@ const ExperienceContainer = () => {
         experience.map((exp, i) => {
           const isOdd = Math.floor((i+1)/2) === 1;
           return (
-            <ExperienceItem experience={exp} dark={!isOdd} />
+            <ExperienceItem key={exp.company} experience={exp} dark={!isOdd} />
           )
         })
       }
