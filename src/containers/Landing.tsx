@@ -18,7 +18,7 @@ const Landing = () => {
         visibility={isInView ? 'visible' : 'hidden'}
         enterActive='animate__fadeInUp'
         exitActive='animate__fadeOutUp'
-        className="name"
+        className="Name"
       >
         <Text size='xlarge'>i am {name}</Text>
       </AnimatedElement>
@@ -27,9 +27,9 @@ const Landing = () => {
         visibility={isInView ? 'visible' : 'hidden'}
         enterActive='animate__fadeInUp'
         exitActive='animate__fadeOutUp'
-        className='intro color--brown'
+        className='intro color--brown ff--paragraph'
       >
-        <Text>this is my live resumè</Text>
+        <Text size='above-average'>this is my live resumè</Text>
       </AnimatedElement>
       <AnimatedElement
         timeout={1250}

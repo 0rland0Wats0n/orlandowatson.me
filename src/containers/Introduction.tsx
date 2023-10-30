@@ -16,8 +16,9 @@ const Introduction = () => {
         visibility={isInView ? 'visible' : 'hidden'}
         enterActive='animate__fadeInUp'
         exitActive='animate__fadeOut'
+        className='ff--paragraph fw--light'
       >
-        <Text quote>{introduction}</Text>
+        <Text size='above-average' quote>{introduction}</Text>
       </AnimatedElement>
     </section>
   )

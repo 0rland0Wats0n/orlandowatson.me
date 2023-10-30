@@ -2,12 +2,17 @@
   width: 100%;
   height: 100vh;
   text-align: center;
-  padding: 3rem;
+  padding: 6rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+
+  .Name {
+    width: 45rem;
+    max-width: 100%;
+  }
 
   .AnimatedScrollIcon {
     margin-top: 3rem;

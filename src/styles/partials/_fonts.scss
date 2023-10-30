@@ -6,35 +6,51 @@ $font-size-root: 62.5%;
   font-size: 6.4rem;
   line-height: 1;
 
-  @media (min-width: 601px) and (min-height: 768) {
+  @media (min-width: 600px) and (min-height: 600px) {
     font-size: 9.6rem
-  }
-
-  @media (min-width: 1368) and (min-height: 768) {
-    font-size: 12.8rem;
   }
 }
 
 .font--large {
   font-size: 3.2rem;
+
+  @media (min-width: 600px) and (min-height: 600px) {
+    font-size: 4.8rem
+  }
 }
 
 .font--above-average {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
+
+  @media (min-width: 600px) and (min-height: 600px)  {
+    font-size: 2.8rem
+  }
 }
 
 .font--normal {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   font-weight: lighter;
   font-family: $font-stack-paragraph;
 
-  @media (min-width: 601px) and (min-height: 768)  {
-    font-size: 3.2rem
+  @media (min-width: 600px) and (min-height: 600px)  {
+    font-size: 1.8rem;
   }
 }
 
 .font--small {
   font-size: 1.4rem;
+
+  @media (min-width: 601px) and (min-height: 768px)  {
+    font-size: 1.6rem;
+  }
+}
+
+.ff--paragraph {
+  font-family: $font-stack-paragraph;
+}
+
+.fw--light {
+  font-weight: lighter;
 }
 
 .text--underline {
