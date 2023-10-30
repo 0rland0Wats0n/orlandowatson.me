@@ -12,6 +12,7 @@
   align-items: center;
   background-color: colors.$color-brown-dark;
   cursor: pointer;
+  transition: transform 200ms linear;
 
   img {
     width: 4rem;
@@ -24,5 +25,10 @@
     border-radius: 0.2rem;
     background-color: colors.$color-off-white;
     margin: 1rem 0 0.5rem;
+  }
+
+  &:hover {
+    background-color: colors.$color-brown;
+    transform: scale(0.95);
   }
 }
