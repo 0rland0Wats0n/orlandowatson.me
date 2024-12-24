@@ -5,7 +5,7 @@ import Text from '../components/Text';
 import ResumeContext from '../lib/ResumeContext';
 
 const TitleAndCountry = () => {
-  const { country, role } = useContext(ResumeContext);
+  const { location, role } = useContext(ResumeContext);
   const titleCountryRef = useRef<HTMLDivElement>(null);
   const isInView = useIsInViewport(titleCountryRef, 0.5);
 
@@ -29,7 +29,7 @@ const TitleAndCountry = () => {
         exitActive='animate__fadeOut'
         className='color--brown text--underline'
       >
-        <Text size='large'>{country}</Text>
+        <Text size='large'>{location}</Text>
       </AnimatedElement>
     </section>
   )

@@ -1,7 +1,7 @@
 export interface ResumeData {
   name: string;
   role: string;
-  country: string;
+  location: string;
   introduction: string;
   education: Education;
   experience: Experience[];

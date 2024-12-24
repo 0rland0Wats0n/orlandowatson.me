@@ -7,7 +7,7 @@ import Logo from '../media/logo.png';
 export const DefaultResumeData: ResumeData = {
   name: 'orlando',
   role: 'software engineer',
-  country: 'jamaica',
+  location: 'the bay area',
   introduction: 'i have a deep passion for learning and building customer-focused web experiences using the latest available web technologies. i love the challenge of working with, and discovering new technologies. i look forward to a professional opportunity to flex both my current skills and adaptability to new environments.',
   education: {
     school: 'claflin university',
