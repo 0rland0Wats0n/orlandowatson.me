@@ -24,6 +24,7 @@ export const DefaultResumeData: ResumeData = {
         'javascript',
         'typescript',
         'node.js',
+        'vercel',
         'sass',
         'figma'      
       ]
