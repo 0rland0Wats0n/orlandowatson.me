@@ -84,7 +84,7 @@ export const DefaultResumeData: ResumeData = {
           details: React.createElement(
             'span',
             { className: 'font--normal'},
-            'i worked on the azure communication rooms rest api and published the latest version of ',
+            'i worked on the azure communication rooms rest api and helped to publish ',
              React.createElement(
               'a',
               { 
