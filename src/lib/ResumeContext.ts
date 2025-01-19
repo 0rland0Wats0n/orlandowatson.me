@@ -132,7 +132,19 @@ export const DefaultResumeData: ResumeData = {
         'javascript',
         'figma'
       ]
-    }
+    },
+    {
+      company: 'microsoft',
+      details: 'i interned with microsoft in the summer of 2016 where i had the opportunity of working on a very cool front end project:',
+      logo: MicrosoftLogo,
+      projects: [
+        {
+          name: 'yammer',
+          details: 'while on the yammer team i created a wizard which guided users through completing certain important tasks whenever they created a new Yammer group',
+          skills: ['javascript', 'angular', 'node.js']
+        },
+      ]
+    },
   ],
   contacts: [
     {
