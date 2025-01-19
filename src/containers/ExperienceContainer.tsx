@@ -25,7 +25,7 @@ const ExperienceContainer = () => {
         experience.map((exp, i) => {
           const isOdd = Math.abs(i%2) === 0;
           return (
-            <ExperienceItem key={exp.company} experience={exp} dark={isOdd} />
+            <ExperienceItem key={exp.company.replaceAll(" ", "") + (Math.random()*10).toPrecision(2)} experience={exp} dark={isOdd} />
           )
         })
       }
