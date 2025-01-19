@@ -1,9 +1,18 @@
 import React, { createContext } from 'react';
 
 import { ResumeData } from './models';
+
 import MicrosoftLogo from '../media/microsoft.png';
 import Logo from '../media/logo.png';
 import Seneca from '../media/seneca.png';
+
+import {
+  OnenoteOnlineDetails,
+  ACSPhoneDetails,
+  ACSSMSDetails,
+  ACSRoomsDetails,
+  SenecaDetails,
+} from "./snippets";
 
 export const DefaultResumeData: ResumeData = {
   name: 'orlando',
@@ -37,68 +46,23 @@ export const DefaultResumeData: ResumeData = {
       projects: [
         {
           name: 'onenote online',
-          details: 'while on the onenote online team i worked on several features and projects. i worked on implementing page-level search for notebooks; adding page-level at-mentions; and numerous bug fixes and customer issues.',
+          details: OnenoteOnlineDetails(),
           skills: ['javascript', 'typescript', 'c#', 'script#', 'react.js', 'node.js']
         },
         {
           name: 'azure communications phone number javascript library',
-          details: React.createElement(
-            'span',
-            { className: 'font--normal'},
-            'i worked on and published the first version of ',
-             React.createElement(
-              'a',
-              { 
-                className: 'color--blue text--underline',
-                href: 'https://www.npmjs.com/package/@azure/communication-phone-numbers',
-                target: '_blank',
-                rel: 'noreferrer'
-              },
-              '@azure/communication-phone-numbers'
-             ),
-            ' to npmjs. this library provides capabilities for phone number administration.'
-          ),
+          details: ACSPhoneDetails(),
           skills: ['javascript', 'typescript', 'node.js', 'c#', '.net']
         },
         {
           name: 'azure communication sms javascript library',
-          details: React.createElement(
-            'span',
-            { className: 'font--normal'},
-            'i worked on and published the first version of ',
-             React.createElement(
-              'a',
-              { 
-                className: 'color--blue text--underline',
-                href: 'https://www.npmjs.com/package/@azure/communication-sms',
-                target: '_blank',
-                rel: 'noreferrer'
-              },
-              '@azure/communication-sms'
-             ),
-            ' to npmjs. this library gives developers the ability to send SMS messages from a phone numbers purchased through the azure ui or the phone numbers library.'
-          ),
+          details: ACSSMSDetails(),
           skills: ['javascript', 'typescript', 'node.js', 'c#', '.net']
         },
         {
           name: 'azure communication rooms',
-          details: React.createElement(
-            'span',
-            { className: 'font--normal'},
-            'i worked on the azure communication rooms rest api and helped to publish ',
-             React.createElement(
-              'a',
-              { 
-                className: 'color--blue text--underline',
-                href: 'https://www.npmjs.com/package/@azure/communication-rooms',
-                target: '_blank',
-                rel: 'noreferrer'
-              },
-              '@azure/communication-rooms'
-             ),
-            ' to npm js.'
-          ),
-          skills: ['javascript', 'typescript', 'node.js', 'c#', '.net']
+          details: ACSRoomsDetails(),
+          skills: ['javascript', 'typescript', 'node.js', 'c#', '.net', 'asp.net', 'rest api']
         },
         {
           name: 'media composition',
@@ -110,22 +74,7 @@ export const DefaultResumeData: ResumeData = {
     {
       company: 'seneca family of agencies',
       logo: Seneca,
-      details: React.createElement(
-        'span',
-        { className: 'font--normal'},
-        'created a custom wordpress theme based on figma designs for the ',
-         React.createElement(
-          'a',
-          { 
-            className: 'color--white text--underline',
-            href: 'https://senecafoa.org/',
-            target: '_blank',
-            rel: 'noreferrer'
-          },
-          'senecafoa.org'
-         ),
-        ' website.'
-      ),
+      details: SenecaDetails(),
       skills: [
         'wordpress',
         'php',
