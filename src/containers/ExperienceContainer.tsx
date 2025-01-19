@@ -23,9 +23,9 @@ const ExperienceContainer = () => {
       </AnimatedElement>
       {
         experience.map((exp, i) => {
-          const isOdd = Math.floor((i+1)/2) === 1;
+          const isOdd = Math.abs(i%2) === 0;
           return (
-            <ExperienceItem key={exp.company} experience={exp} dark={!isOdd} />
+            <ExperienceItem key={exp.company} experience={exp} dark={isOdd} />
           )
         })
       }

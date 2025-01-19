@@ -21,7 +21,7 @@ export interface Education {
 
 export interface Experience {
   company: string;
-  details: string;
+  details: string | React.ReactNode;
   logo: string;
   skills?: string[];
   projects?: Project[];

@@ -3,6 +3,7 @@ import React, { createContext } from 'react';
 import { ResumeData } from './models';
 import MicrosoftLogo from '../media/microsoft.png';
 import Logo from '../media/logo.png';
+import Seneca from '../media/seneca.png';
 
 export const DefaultResumeData: ResumeData = {
   name: 'orlando',
@@ -104,6 +105,32 @@ export const DefaultResumeData: ResumeData = {
           details: 'i worked on researching, designing and developing microsoft\'s media composition layout solution to give developers live media composition capabilities through azure. this worked involved working on azure sdks, rest apis and more backend related tasks.',
           skills: ['javascript', 'typescript', 'node.js', 'c#', '.net']
         }
+      ]
+    },
+    {
+      company: 'seneca family of agencies',
+      logo: Seneca,
+      details: React.createElement(
+        'span',
+        { className: 'font--normal'},
+        'created a custom wordpress theme based on figma designs for the ',
+         React.createElement(
+          'a',
+          { 
+            className: 'color--white text--underline',
+            href: 'https://senecafoa.org/',
+            target: '_blank',
+            rel: 'noreferrer'
+          },
+          'senecafoa.org'
+         ),
+        ' website.'
+      ),
+      skills: [
+        'wordpress',
+        'php',
+        'javascript',
+        'figma'
       ]
     }
   ],
